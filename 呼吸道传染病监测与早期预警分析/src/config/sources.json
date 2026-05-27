@@ -1,0 +1,50 @@
+{
+  "chinacdc_monthly": {
+    "source_name": "中国疾控中心全国法定传染病疫情情况",
+    "base_url": "https://www.chinacdc.cn/jksj/jksj01/",
+    "list_urls": [
+      "https://www.chinacdc.cn/jksj/jksj01/index.html"
+    ],
+    "max_list_pages": 2,
+    "start_year": 2010,
+    "end_year": 2026,
+    "raw_subdir": "chinacdc_monthly"
+  },
+  "respiratory_weekly": {
+    "source_name": "中国疾控中心全国急性呼吸道传染病哨点监测情况",
+    "base_url": "https://www.chinacdc.cn/jksj/jksj04_14275/",
+    "list_urls": [
+      "https://www.chinacdc.cn/jksj/jksj04_14275/"
+    ],
+    "max_list_pages": 5,
+    "start_year": 2023,
+    "end_year": 2026,
+    "raw_subdir": "respiratory_weekly"
+  },
+  "influenza_weekly": {
+    "source_name": "中国疾控中心流感监测周报",
+    "base_url": "https://www.chinacdc.cn/jksj/jksj04_14249/",
+    "list_urls": [
+      "https://www.chinacdc.cn/jksj/jksj04_14249/"
+    ],
+    "max_list_pages": 10,
+    "start_year": 2023,
+    "end_year": 2026,
+    "raw_subdir": "influenza_weekly"
+  },
+  "weather_daily": {
+    "source_name": "NASA POWER 日度气象数据",
+    "base_url": "https://power.larc.nasa.gov/api/temporal/daily/point",
+    "start_date": "20180101",
+    "end_date": "20260528",
+    "parameters": [
+      "T2M",
+      "T2M_MAX",
+      "T2M_MIN",
+      "RH2M",
+      "PRECTOTCORR",
+      "WS2M"
+    ],
+    "raw_subdir": "weather_daily"
+  }
+}

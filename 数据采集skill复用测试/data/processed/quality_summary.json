@@ -1,0 +1,58 @@
+{
+  "raw_counts": {
+    "yahoo_chart_json": 46,
+    "sec_companyfacts_json": 43,
+    "source_url_sidecars": 89
+  },
+  "tables": [
+    {
+      "file": "data/interim/stock_daily_market.csv",
+      "rows": 10836,
+      "columns": 14,
+      "duplicate_count": 0,
+      "missing_required": {
+        "ticker": 0,
+        "trade_date": 0,
+        "close": 0,
+        "source_url": 0,
+        "raw_file": 0
+      },
+      "trade_date_min": "2024-01-02",
+      "trade_date_max": "2024-12-31",
+      "ticker_count": 43
+    },
+    {
+      "file": "data/interim/rd_annual_sec.csv",
+      "rows": 527,
+      "columns": 13,
+      "duplicate_count": 0,
+      "missing_required": {
+        "ticker": 0,
+        "fiscal_year": 0,
+        "rd_expense_usd": 0,
+        "source_url": 0,
+        "raw_file": 0
+      },
+      "fiscal_year_min": 2009,
+      "fiscal_year_max": 2025,
+      "ticker_count": 42
+    },
+    {
+      "file": "data/processed/market_rd_daily_merged.csv",
+      "rows": 10836,
+      "columns": 20,
+      "duplicate_count": 0,
+      "missing_required": {
+        "ticker": 0,
+        "trade_date": 0,
+        "close": 0,
+        "rd_expense_usd": 252,
+        "source_url": 0,
+        "raw_file": 0
+      },
+      "trade_date_min": "2024-01-02",
+      "trade_date_max": "2024-12-31",
+      "ticker_count": 43
+    }
+  ]
+}

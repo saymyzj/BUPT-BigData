@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/SAGE?period1=1704067200&period2=1735689600&interval=1d&events=history&includeAdjustedClose=true",
+    "subdir": "yahoo_chart",
+    "error": "failed to fetch url after retries: https://query1.finance.yahoo.com/v8/finance/chart/SAGE?period1=1704067200&period2=1735689600&interval=1d&events=history&includeAdjustedClose=true"
+  },
+  {
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/BLUE?period1=1704067200&period2=1735689600&interval=1d&events=history&includeAdjustedClose=true",
+    "subdir": "yahoo_chart",
+    "error": "failed to fetch url after retries: https://query1.finance.yahoo.com/v8/finance/chart/BLUE?period1=1704067200&period2=1735689600&interval=1d&events=history&includeAdjustedClose=true"
+  }
+]

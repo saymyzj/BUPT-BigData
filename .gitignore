@@ -1,0 +1,21 @@
+# macOS system files
+.DS_Store
+._*
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python cache and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and temporary files
+*.log
+data/cache/
+tmp/
+temp/
