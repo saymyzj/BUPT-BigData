@@ -1,0 +1,44 @@
+﻿ticker,company_name,industry_group,cluster_id,risk_level,risk_score,avg_close,year_end_adj_close,total_volume,avg_daily_return,daily_return_volatility,latest_rd_expense_busd
+PFE,Pfizer Inc.,Pharmaceuticals,2,high_attention,1.409358,27.897143,23.937210,9780857700.000000,-0.000112,0.014596,10.822000
+EDIT,"Editas Medicine, Inc.",Biotechnology,2,high_attention,1.357550,5.174226,1.270000,520277900.000000,-0.007031,0.047958,0.199247
+FATE,"Fate Therapeutics, Inc.",Biotechnology,2,high_attention,1.173596,4.220833,1.650000,616559000.000000,-0.001555,0.058228,0.135001
+MRNA,"Moderna, Inc.",Biotechnology,2,high_attention,0.969712,91.492262,41.580002,1295073000.000000,-0.003256,0.037230,4.543000
+MRK,"Merck & Co., Inc.",Pharmaceuticals,2,high_attention,0.729398,118.394603,95.170723,2353407300.000000,-0.000322,0.013131,17.938000
+NTLA,"Intellia Therapeutics, Inc.",Biotechnology,2,high_attention,0.704583,22.495377,11.660000,451583800.000000,-0.003105,0.038752,0.466311
+BMY,Bristol-Myers Squibb Company,Pharmaceuticals,2,high_attention,0.626503,49.621429,52.708889,3527827900.000000,0.000631,0.017933,11.159000
+BEAM,Beam Therapeutics Inc.,Biotechnology,2,high_attention,0.552012,26.724940,24.799999,307309400.000000,0.000625,0.046070,0.367561
+ARWR,"Arrowhead Pharmaceuticals, Inc.",Biotechnology,2,high_attention,0.520721,25.315853,18.799999,322141000.000000,-0.001214,0.039865,0.047267
+DXCM,"DexCom, Inc.",Medical Devices,2,high_attention,0.423615,101.691865,77.769997,973314300.000000,-0.001105,0.034532,0.552400
+CRSP,CRISPR Therapeutics AG,Biotechnology,2,high_attention,0.303841,56.668115,39.360001,383537800.000000,-0.001572,0.031445,0.320653
+ABBV,AbbVie Inc.,Pharmaceuticals,2,high_attention,0.268334,177.222539,168.924698,1401514100.000000,0.000679,0.014905,12.791000
+GILD,"Gilead Sciences, Inc.",Biotechnology,2,high_attention,0.194864,77.543254,89.350456,1773743200.000000,0.000696,0.015566,9.106000
+EW,Edwards Lifesciences Corporation,Medical Devices,2,high_attention,0.089842,78.700000,74.029999,1182414300.000000,0.000313,0.026271,1.053000
+IONS,"Ionis Pharmaceuticals, Inc.",Biotechnology,2,high_attention,0.031231,43.100754,34.959999,339952000.000000,-0.001385,0.022801,0.638200
+RARE,Ultragenyx Pharmaceutical Inc.,Biotechnology,1,medium_attention,-0.004684,47.629643,42.070000,195999700.000000,-0.000209,0.025821,0.697865
+SRPT,"Sarepta Therapeutics, Inc.",Biotechnology,1,medium_attention,-0.014655,128.001191,121.589996,301935800.000000,0.001410,0.032129,0.207239
+ALNY,"Alnylam Pharmaceuticals, Inc.",Biotechnology,1,medium_attention,-0.049921,212.763452,235.309998,214338700.000000,0.001192,0.031223,1.126232
+AMGN,Amgen Inc.,Biotechnology,1,medium_attention,-0.084987,302.700398,248.807663,675415300.000000,-0.000278,0.016128,5.964000
+INCY,Incyte Corporation,Biotechnology,1,medium_attention,-0.144827,62.980437,69.070000,584373500.000000,0.000389,0.018851,2.606848
+TECH,Bio-Techne Corporation,Life Sciences Tools,1,medium_attention,-0.147160,73.452897,71.394386,251178700.000000,0.000030,0.023200,0.096664
+BIIB,Biogen Inc.,Biotechnology,1,medium_attention,-0.151063,206.991707,152.919998,305682300.000000,-0.002102,0.015851,1.334919
+HALO,"Halozyme Therapeutics, Inc.",Biotechnology,1,medium_attention,-0.163357,47.620556,47.810001,344450200.000000,0.001312,0.025759,0.079048
+MDT,Medtronic plc,Medical Devices,1,medium_attention,-0.224809,84.503889,76.810364,1569880900.000000,0.000049,0.011010,2.735000
+ABT,Abbott Laboratories,Medical Devices,1,medium_attention,-0.268482,111.460992,109.758553,1409716600.000000,0.000259,0.011313,2.844000
+NBIX,"Neurocrine Biosciences, Inc.",Biotechnology,1,medium_attention,-0.291397,133.572103,136.500000,222082600.000000,0.000365,0.020719,0.160524
+JNJ,Johnson & Johnson,Pharmaceuticals,1,medium_attention,-0.294412,155.530000,138.784363,1805620600.000000,-0.000233,0.009454,1.841000
+EXEL,"Exelixis, Inc.",Biotechnology,1,medium_attention,-0.298174,25.478055,33.299999,520098300.000000,0.001504,0.019644,0.910408
+RMD,ResMed Inc.,Medical Devices,0,low_attention,-0.339100,212.981230,225.476151,254845500.000000,0.001450,0.023643,0.307525
+LLY,Eli Lilly and Company,Pharmaceuticals,0,low_attention,-0.339568,810.865755,763.692993,809238700.000000,0.001263,0.019085,7.190800
+PODD,Insulet Corporation,Medical Devices,0,low_attention,-0.354158,206.304761,261.070007,189704700.000000,0.001156,0.023316,0.219600
+DHR,Danaher Corporation,Life Sciences Tools,0,low_attention,-0.382844,251.857896,227.631760,707111700.000000,0.000024,0.013997,1.584000
+ZBH,"Zimmer Biomet Holdings, Inc.",Medical Devices,0,low_attention,-0.401287,114.675317,104.313530,376741600.000000,-0.000429,0.013453,0.225600
+VRTX,Vertex Pharmaceuticals Incorporated,Biotechnology,0,low_attention,-0.412654,450.561589,402.700012,313456900.000000,0.000041,0.015463,3.051100
+IDXX,"IDEXX Laboratories, Inc.",Diagnostics,0,low_attention,-0.440160,492.568373,413.440002,129040000.000000,-0.000974,0.017061,0.219792
+BDX,"Becton, Dickinson and Company",Medical Devices,0,low_attention,-0.458168,184.755946,173.472122,476100695.000000,-0.000179,0.011611,1.190000
+REGN,"Regeneron Pharmaceuticals, Inc.",Biotechnology,0,low_attention,-0.468343,968.292895,706.494751,143471300.000000,-0.000859,0.013662,5.132000
+BSX,Boston Scientific Corporation,Medical Devices,0,low_attention,-0.474403,76.240198,89.320000,1495040200.000000,0.001788,0.010540,1.615000
+HOLX,"Hologic, Inc.",Diagnostics,0,low_attention,-0.511886,76.901945,72.089996,420731190.000000,0.000039,0.010903,
+TMO,Thermo Fisher Scientific Inc.,Life Sciences Tools,0,low_attention,-0.626399,569.021785,517.884766,389070000.000000,-0.000090,0.012566,1.390000
+UTHR,United Therapeutics Corporation,Biotechnology,0,low_attention,-0.646644,299.929404,352.839996,111653400.000000,0.001907,0.017663,0.481000
+SYK,Stryker Corporation,Medical Devices,0,low_attention,-0.657474,347.892143,355.787994,317398000.000000,0.000884,0.011818,1.466000
+ISRG,"Intuitive Surgical, Inc.",Medical Devices,0,low_attention,-0.704146,441.554801,521.960022,362542900.000000,0.001954,0.016794,1.145300

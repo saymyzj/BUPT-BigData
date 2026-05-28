@@ -1,0 +1,85 @@
+{
+  "input_rows": {
+    "rd_annual_sec": 527,
+    "stock_daily_market": 10836
+  },
+  "output_rows": {
+    "rd_annual_clean": 527,
+    "stock_daily_clean": 10836,
+    "company_2024_features": 43
+  },
+  "duplicates_dropped": {
+    "rd_annual_clean": 0,
+    "stock_daily_clean": 0,
+    "company_2024_features": 0
+  },
+  "missing_cells_by_field": {
+    "rd_annual_clean": {
+      "ticker": 0,
+      "company_name": 0,
+      "industry_group": 0,
+      "cik": 0,
+      "fiscal_year": 0,
+      "rd_expense_usd": 0,
+      "rd_expense_musd": 0,
+      "rd_expense_busd": 0,
+      "sec_fact_tag": 0,
+      "form": 0,
+      "filed_date": 0,
+      "source_url": 0,
+      "crawl_time": 0,
+      "raw_file": 0
+    },
+    "stock_daily_clean": {
+      "ticker": 0,
+      "company_name": 0,
+      "industry_group": 0,
+      "trade_date": 0,
+      "trade_year": 0,
+      "trade_month": 0,
+      "open": 0,
+      "high": 0,
+      "low": 0,
+      "close": 0,
+      "adj_close": 0,
+      "volume": 0,
+      "daily_return": 43,
+      "return_pct": 43,
+      "source_url": 0,
+      "crawl_time": 0,
+      "raw_file": 0
+    },
+    "company_2024_features": {
+      "ticker": 0,
+      "company_name": 0,
+      "industry_group": 0,
+      "trade_year": 0,
+      "trading_days": 0,
+      "avg_close": 0,
+      "year_end_adj_close": 0,
+      "total_volume": 0,
+      "avg_daily_return": 0,
+      "daily_return_volatility": 0,
+      "latest_rd_fiscal_year": 1,
+      "latest_rd_expense_usd": 1,
+      "latest_rd_expense_musd": 1,
+      "latest_rd_expense_busd": 1
+    }
+  },
+  "feature_columns": {
+    "company_2024_features": 14
+  },
+  "generated_at": "2026-05-28T13:02:27.157412+00:00",
+  "output_dir": "E:\\BUPT-BigData\\数据清洗skill复用测试\\data\\processed",
+  "notes": [
+    "stock_daily_clean.daily_return 的空值主要来自每个 ticker 首个交易日，属于收益率计算的结构性空值。",
+    "关键金额、价格和收益率指标未做主观插补。"
+  ],
+  "output_files": [
+    "rd_annual_clean.csv",
+    "stock_daily_clean.csv",
+    "company_2024_features.csv",
+    "data_dictionary.csv",
+    "quality_summary.json"
+  ]
+}

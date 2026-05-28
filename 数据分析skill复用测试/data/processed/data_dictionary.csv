@@ -1,0 +1,46 @@
+﻿table_name,field_name,data_type,unit,missing_value_strategy,source_field,description
+rd_annual_clean,ticker,string,-,保留为空并检查来源,ticker,股票代码，统一为大写
+rd_annual_clean,company_name,string,-,保留为空并检查来源,company_name,公司名称
+rd_annual_clean,industry_group,string,-,保留为空并检查来源,industry_group,行业分组
+rd_annual_clean,cik,string,-,保留为空并检查来源,cik,SEC CIK，标准化为 10 位字符串
+rd_annual_clean,fiscal_year,integer,year,关键字段不插补,fiscal_year,SEC 报告财年
+rd_annual_clean,rd_expense_usd,float,USD,关键指标不插补,rd_expense_usd,研发费用，美元
+rd_annual_clean,rd_expense_musd,float,million USD,关键指标不插补,rd_expense_musd,研发费用，百万美元
+rd_annual_clean,rd_expense_busd,float,billion USD,由 rd_expense_usd 派生,rd_expense_usd / 1e9,研发费用，十亿美元
+rd_annual_clean,sec_fact_tag,string,-,保留为空并检查来源,sec_fact_tag,SEC XBRL fact 标签
+rd_annual_clean,form,string,-,保留为空并检查来源,form,SEC 申报表类型
+rd_annual_clean,filed_date,date,-,保留为空并检查来源,filed_date,SEC 文件提交日期
+rd_annual_clean,source_url,string,-,保留为空并检查来源,source_url,来源接口 URL
+rd_annual_clean,crawl_time,datetime,-,保留为空并检查来源,crawl_time,采集时间
+rd_annual_clean,raw_file,string,-,保留为空并检查来源,raw_file,原始缓存文件路径
+stock_daily_clean,ticker,string,-,保留为空并检查来源,ticker,股票代码，统一为大写
+stock_daily_clean,company_name,string,-,保留为空并检查来源,company_name,公司名称
+stock_daily_clean,industry_group,string,-,保留为空并检查来源,industry_group,行业分组
+stock_daily_clean,trade_date,date,-,关键字段不插补,trade_date,交易日期
+stock_daily_clean,trade_year,integer,year,由 trade_date 派生,trade_date,交易年份
+stock_daily_clean,trade_month,string,month,由 trade_date 派生,trade_date,交易月份，YYYY-MM
+stock_daily_clean,open,float,USD/share,关键指标不插补,open,开盘价
+stock_daily_clean,high,float,USD/share,关键指标不插补,high,最高价
+stock_daily_clean,low,float,USD/share,关键指标不插补,low,最低价
+stock_daily_clean,close,float,USD/share,关键指标不插补,close,收盘价
+stock_daily_clean,adj_close,float,USD/share,关键指标不插补,adj_close,复权收盘价
+stock_daily_clean,volume,integer,shares,关键指标不插补,volume,成交量
+stock_daily_clean,daily_return,float,ratio,首个交易日结构性空值保留,daily_return,日收益率
+stock_daily_clean,return_pct,float,percent,由 daily_return 派生,daily_return * 100,日收益率百分比
+stock_daily_clean,source_url,string,-,保留为空并检查来源,source_url,来源接口 URL
+stock_daily_clean,crawl_time,datetime,-,保留为空并检查来源,crawl_time,采集时间
+stock_daily_clean,raw_file,string,-,保留为空并检查来源,raw_file,原始缓存文件路径
+company_2024_features,ticker,string,-,来自股票表,ticker,股票代码
+company_2024_features,company_name,string,-,来自股票表,company_name,公司名称
+company_2024_features,industry_group,string,-,来自股票表,industry_group,行业分组
+company_2024_features,trade_year,integer,year,来自 trade_date,trade_year,交易年份
+company_2024_features,trading_days,integer,days,由股票日表聚合,count(trade_date),年度交易日数量
+company_2024_features,avg_close,float,USD/share,由股票日表聚合,mean(close),年度平均收盘价
+company_2024_features,year_end_adj_close,float,USD/share,由股票日表聚合,last(adj_close),年末复权收盘价
+company_2024_features,total_volume,integer,shares,由股票日表聚合,sum(volume),年度总成交量
+company_2024_features,avg_daily_return,float,ratio,由股票日表聚合,mean(daily_return),平均日收益率
+company_2024_features,daily_return_volatility,float,ratio,由股票日表聚合,std(daily_return),日收益率波动率
+company_2024_features,latest_rd_fiscal_year,integer,year,无可用研发记录则为空,rd_annual_clean,不晚于 2024 年的最新研发费用财年
+company_2024_features,latest_rd_expense_usd,float,USD,无可用研发记录则为空,rd_annual_clean,最新可用研发费用，美元
+company_2024_features,latest_rd_expense_musd,float,million USD,无可用研发记录则为空,rd_annual_clean,最新可用研发费用，百万美元
+company_2024_features,latest_rd_expense_busd,float,billion USD,无可用研发记录则为空,rd_annual_clean,最新可用研发费用，十亿美元

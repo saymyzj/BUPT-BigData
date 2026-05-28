@@ -1,0 +1,41 @@
+﻿dataset,group_name,metric_name,observations,mean,min,max,sum,latest_period,latest_value
+company_2024_features,all,trading_days,43,252.000000,252.000000,252.000000,10836.000000,2024,252.000000
+company_2024_features,all,avg_close,43,186.124478,4.220833,968.292895,8003.352552,2024,114.675317
+company_2024_features,all,year_end_adj_close,43,172.750498,1.270000,763.692993,7428.271395,2024,104.313530
+company_2024_features,all,total_volume,43,933172853.139535,111653400.000000,9780857700.000000,40126432685.000000,2024,376741600.000000
+company_2024_features,all,avg_daily_return,43,-0.000141,-0.007031,0.001954,-0.006046,2024,-0.000429
+company_2024_features,all,daily_return_volatility,43,0.022139,0.009454,0.058228,0.951959,2024,0.013453
+company_2024_features,all,latest_rd_expense_busd,42,2.760955,0.047267,17.938000,115.960104,2024,0.225600
+stock_daily_clean,all,close,10836,186.124478,1.200000,1201.760010,2016844.843026,2024-12-31,105.629997
+stock_daily_clean,all,adj_close,10836,183.559937,1.200000,1191.915527,1989055.472014,2024-12-31,104.313530
+stock_daily_clean,all,volume,10836,3703066.877538,133600.000000,131074400.000000,40126432685.000000,2024-12-31,683300.000000
+stock_daily_clean,all,daily_return,10793,-0.000141,-0.406583,0.345202,-1.517660,2024-12-31,0.002182
+stock_daily_clean,all,return_pct,10793,-0.014062,-40.658321,34.520216,-151.766036,2024-12-31,0.218225
+rd_annual_clean,all,rd_expense_usd,527,1949375776.810247,3277760.000000,30531000000.000000,1027321034379.000000,2025,550000000.000000
+rd_annual_clean,all,rd_expense_musd,527,1949.375777,3.277760,30531.000000,1027321.034379,2025,550.000000
+rd_annual_clean,all,rd_expense_busd,527,1.949376,0.003278,30.531000,1027.321034,2025,0.550000
+company_2024_features,industry_group=Biotechnology,avg_close,21,154.250335,4.220833,968.292895,3239.257044,2024,450.561589
+company_2024_features,industry_group=Biotechnology,year_end_adj_close,21,133.944899,1.270000,706.494751,2812.842871,2024,402.700012
+company_2024_features,industry_group=Biotechnology,total_volume,21,473482623.809524,111653400.000000,1773743200.000000,9943135100.000000,2024,313456900.000000
+company_2024_features,industry_group=Biotechnology,daily_return_volatility,21,0.028135,0.013662,0.058228,0.590828,2024,0.015463
+company_2024_features,industry_group=Biotechnology,latest_rd_expense_busd,21,1.789258,0.047267,9.106000,37.574423,2024,3.051100
+company_2024_features,industry_group=Diagnostics,avg_close,2,284.735159,76.901945,492.568373,569.470318,2024,492.568373
+company_2024_features,industry_group=Diagnostics,year_end_adj_close,2,242.764999,72.089996,413.440002,485.529999,2024,413.440002
+company_2024_features,industry_group=Diagnostics,total_volume,2,274885595.000000,129040000.000000,420731190.000000,549771190.000000,2024,129040000.000000
+company_2024_features,industry_group=Diagnostics,daily_return_volatility,2,0.013982,0.010903,0.017061,0.027965,2024,0.017061
+company_2024_features,industry_group=Diagnostics,latest_rd_expense_busd,1,0.219792,0.219792,0.219792,0.219792,2024,0.219792
+company_2024_features,industry_group=Life Sciences Tools,avg_close,3,298.110859,73.452897,569.021785,894.332578,2024,569.021785
+company_2024_features,industry_group=Life Sciences Tools,year_end_adj_close,3,272.303637,71.394386,517.884766,816.910912,2024,517.884766
+company_2024_features,industry_group=Life Sciences Tools,total_volume,3,449120133.333333,251178700.000000,707111700.000000,1347360400.000000,2024,389070000.000000
+company_2024_features,industry_group=Life Sciences Tools,daily_return_volatility,3,0.016588,0.012566,0.023200,0.049763,2024,0.012566
+company_2024_features,industry_group=Life Sciences Tools,latest_rd_expense_busd,3,1.023555,0.096664,1.584000,3.070664,2024,1.390000
+company_2024_features,industry_group=Medical Devices,avg_close,11,178.251013,76.240198,441.554801,1960.761143,2024,114.675317
+company_2024_features,industry_group=Medical Devices,year_end_adj_close,11,188.160794,74.029999,521.960022,2069.768738,2024,104.313530
+company_2024_features,industry_group=Medical Devices,total_volume,11,782518154.090909,189704700.000000,1569880900.000000,8607699695.000000,2024,376741600.000000
+company_2024_features,industry_group=Medical Devices,daily_return_volatility,11,0.017664,0.010540,0.034532,0.194300,2024,0.013453
+company_2024_features,industry_group=Medical Devices,latest_rd_expense_busd,11,1.213948,0.219600,2.844000,13.353425,2024,0.225600
+company_2024_features,industry_group=Pharmaceuticals,avg_close,6,223.255245,27.897143,810.865755,1339.531469,2024,27.897143
+company_2024_features,industry_group=Pharmaceuticals,year_end_adj_close,6,207.203146,23.937210,763.692993,1243.218876,2024,23.937210
+company_2024_features,industry_group=Pharmaceuticals,total_volume,6,3279744383.333333,809238700.000000,9780857700.000000,19678466300.000000,2024,9780857700.000000
+company_2024_features,industry_group=Pharmaceuticals,daily_return_volatility,6,0.014851,0.009454,0.019085,0.089104,2024,0.014596
+company_2024_features,industry_group=Pharmaceuticals,latest_rd_expense_busd,6,10.290300,1.841000,17.938000,61.741800,2024,10.822000

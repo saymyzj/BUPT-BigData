@@ -1,0 +1,10 @@
+﻿source_table,keyword,category,occurrences,document_count,attention_label,explanation
+company_2024_features,Bio,company_name,25,23,risk_attention,公司名称中的生物相关关键词，提示创新研发关注
+company_2024_features,Biotechnology,industry,21,21,risk_attention,生物技术行业分组，通常研发投入和市场波动关注度较高
+company_2024_features,Diagnostics,industry,2,2,regular_monitoring,诊断行业分组，用于常规行业对比
+company_2024_features,Life Sciences Tools,industry,3,3,regular_monitoring,生命科学工具行业分组，用于常规行业对比
+company_2024_features,Medical,company_name,11,11,regular_monitoring,公司名称中的医疗相关关键词
+company_2024_features,Medical Devices,industry,11,11,regular_monitoring,医疗器械行业分组，用于常规行业对比
+company_2024_features,Pharmaceuticals,company_name,11,11,regular_monitoring,公司名称中的制药相关关键词
+company_2024_features,Pharmaceuticals,industry,11,11,regular_monitoring,制药行业分组，用于常规行业对比
+company_2024_features,Therapeutics,company_name,7,7,risk_attention,公司名称中的治疗相关关键词，提示研发型业务关注

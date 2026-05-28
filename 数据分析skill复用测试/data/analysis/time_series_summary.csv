@@ -1,0 +1,6 @@
+﻿series_name,frequency,start_period,end_period,latest_value,previous_value,change,change_percent,recent_4_period_avg,trend_direction
+monthly_avg_close,monthly,2024-01,2024-12,179.542218,183.765915,-4.223696,-0.022984,188.800850,down
+monthly_avg_adj_close,monthly,2024-01,2024-12,177.597776,181.634956,-4.037180,-0.022227,186.573176,down
+monthly_avg_daily_return,monthly,2024-01,2024-12,-0.003864,0.001147,-0.005011,-4.368721,-0.001425,down
+monthly_total_volume,monthly,2024-01,2024-12,3582668468.000000,3845309692.000000,-262641224.000000,-0.068302,3400976108.750000,down
+annual_total_rd_expense_busd,annual,2009,2025,87.517160,93.998455,-6.481295,-0.068951,89.489287,down

@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-05-28T13:15:28.578567+00:00",
+  "input_rows": {
+    "rd_annual_clean": 527,
+    "stock_daily_clean": 10836,
+    "company_2024_features": 43
+  },
+  "output_rows": {
+    "descriptive_statistics.csv": 40,
+    "time_series_summary.csv": 5,
+    "correlation_matrix.csv": 15,
+    "cluster_results.csv": 43,
+    "anomaly_detection_results.csv": 864,
+    "keyword_sentiment_analysis.csv": 9,
+    "analysis_data_dictionary.csv": 58
+  },
+  "key_findings": [
+    "公司特征宽表覆盖 43 家公司，行业包括 5 个分组。",
+    "风险分组中高关注公司 15 家，结果用于提示而非最终业务判断。",
+    "异常检测输出 864 条日度收益率或成交量异常候选。",
+    "最强公司级相关组合为 avg_close 与 year_end_adj_close，Pearson=0.977。"
+  ],
+  "limitations": [
+    "相关性不等于因果关系，研发投入和市场表现之间只能做线性共变解释。",
+    "风险分组采用标准化规则和分位数切分，不替代财务、临床或监管尽调。",
+    "关键词分析来自官方字段文本，不代表社交媒体主观情绪。"
+  ]
+}

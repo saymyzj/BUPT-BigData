@@ -1,0 +1,61 @@
+{
+  "chinacdc_monthly": {
+    "input_rows": 1420,
+    "output_rows": 1420,
+    "duplicates_dropped": 0,
+    "missing_cells_by_field": {
+      "incidence_rate": 1420,
+      "mortality_rate": 1420
+    }
+  },
+  "respiratory_weekly": {
+    "input_rows": 3576,
+    "output_rows": 3576,
+    "duplicates_dropped": 0,
+    "missing_cells_by_field": {
+      "age_group": 1896,
+      "pathogen_name": 2520,
+      "positive_rate": 2520,
+      "rank": 1056,
+      "ranked_pathogen": 1056,
+      "week_over_week_change": 2520
+    }
+  },
+  "influenza_weekly": {
+    "input_rows": 4161,
+    "output_rows": 4161,
+    "duplicates_dropped": 0,
+    "missing_cells_by_field": {
+      "dominant_subtype": 4059,
+      "indicator_value": 56,
+      "metric_percent": 1732,
+      "metric_value": 379,
+      "outbreak_count": 3985
+    }
+  },
+  "weather_daily": {
+    "input_rows": 95139,
+    "output_rows": 95139,
+    "duplicates_dropped": 0,
+    "missing_cells_by_field": {
+      "avg_humidity": 186,
+      "avg_temperature": 186,
+      "max_temperature": 186,
+      "min_temperature": 186,
+      "precipitation": 186,
+      "wind_speed": 186
+    }
+  },
+  "weather_weekly": {
+    "output_rows": 13609
+  },
+  "weather_monthly": {
+    "output_rows": 3131
+  },
+  "province_weekly_features": {
+    "output_rows": 13609,
+    "feature_columns": 38
+  },
+  "generated_at": "2026-05-28 19:45:37",
+  "output_dir": "E:\\BUPT-BigData\\呼吸道传染病监测与早期预警分析\\data\\processed"
+}

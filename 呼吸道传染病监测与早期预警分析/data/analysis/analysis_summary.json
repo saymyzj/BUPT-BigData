@@ -1,0 +1,263 @@
+{
+  "generated_at": "2026-05-28 19:46:30",
+  "output_dir": "E:\\BUPT-BigData\\呼吸道传染病监测与早期预警分析\\data\\analysis",
+  "descriptive_statistics_rows": 156,
+  "time_series_summary_rows": 32,
+  "correlation_pairs": 92,
+  "cluster_rows": 3844,
+  "cluster_counts": {
+    "中风险": 3229,
+    "低风险": 398,
+    "高风险": 217
+  },
+  "anomaly_rows": 83,
+  "keyword_sentiment_rows": 24,
+  "top_correlations": [
+    {
+      "x_variable": "precipitation_total",
+      "y_variable": "resp_outpatient_ili_covid_positive_rate",
+      "sample_size": 48,
+      "pearson_correlation": "0.8475",
+      "abs_correlation": "0.8475",
+      "strength": "强相关",
+      "direction": "正相关"
+    },
+    {
+      "x_variable": "avg_temperature",
+      "y_variable": "resp_outpatient_ili_covid_positive_rate",
+      "sample_size": 48,
+      "pearson_correlation": "0.7946",
+      "abs_correlation": "0.7946",
+      "strength": "强相关",
+      "direction": "正相关"
+    },
+    {
+      "x_variable": "precipitation_total",
+      "y_variable": "resp_hospital_sari_covid_positive_rate",
+      "sample_size": 48,
+      "pearson_correlation": "0.7719",
+      "abs_correlation": "0.7719",
+      "strength": "强相关",
+      "direction": "正相关"
+    },
+    {
+      "x_variable": "avg_temperature",
+      "y_variable": "resp_hospital_sari_covid_positive_rate",
+      "sample_size": 48,
+      "pearson_correlation": "0.7278",
+      "abs_correlation": "0.7278",
+      "strength": "强相关",
+      "direction": "正相关"
+    },
+    {
+      "x_variable": "avg_humidity",
+      "y_variable": "resp_outpatient_ili_bocavirus_positive_rate",
+      "sample_size": 48,
+      "pearson_correlation": "0.7264",
+      "abs_correlation": "0.7264",
+      "strength": "强相关",
+      "direction": "正相关"
+    }
+  ],
+  "top_anomalies": [
+    {
+      "series_name": "流感样病例暴发疫情数",
+      "period": "2025-W48",
+      "value": "1541",
+      "mean": "97.7159",
+      "stddev": "273.4133",
+      "z_score": "5.2788",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "南方省份 ILI%",
+      "period": "2025-W49",
+      "value": "11.1",
+      "mean": "4.6351",
+      "stddev": "1.4553",
+      "z_score": "4.4424",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "流感样病例暴发疫情数",
+      "period": "2025-W47",
+      "value": "1234",
+      "mean": "97.7159",
+      "stddev": "273.4133",
+      "z_score": "4.1559",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "流感样病例暴发疫情数",
+      "period": "2025-W49",
+      "value": "1219",
+      "mean": "97.7159",
+      "stddev": "273.4133",
+      "z_score": "4.1011",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "北方省份 ILI%",
+      "period": "2025-W48",
+      "value": "9.1",
+      "mean": "3.9532",
+      "stddev": "1.289",
+      "z_score": "3.9928",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "流行性感冒月度发病数",
+      "period": "2025-12",
+      "value": "6727614",
+      "mean": "1021512.7857",
+      "stddev": "1534376.7167",
+      "z_score": "3.7188",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "北方省份 ILI%",
+      "period": "2025-W47",
+      "value": "8.6",
+      "mean": "3.9532",
+      "stddev": "1.289",
+      "z_score": "3.6049",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "门急诊流感样病例-人偏肺病毒阳性率",
+      "period": "2026-W18",
+      "value": "4.9",
+      "mean": "0.8",
+      "stddev": "1.1495",
+      "z_score": "3.5669",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "门急诊流感样病例-人偏肺病毒阳性率",
+      "period": "2026-W19",
+      "value": "4.9",
+      "mean": "0.8",
+      "stddev": "1.1495",
+      "z_score": "3.5669",
+      "anomaly_type": "异常高值"
+    },
+    {
+      "series_name": "住院严重急性呼吸道感染病例-普通冠状病毒阳性率",
+      "period": "2025-W37",
+      "value": "7.4",
+      "mean": "2.3667",
+      "stddev": "1.4131",
+      "z_score": "3.5619",
+      "anomaly_type": "异常高值"
+    }
+  ],
+  "top_keywords": [
+    {
+      "source_table": "influenza_weekly_clean",
+      "keyword": "流感",
+      "category": "病种/病原体",
+      "occurrences": 4249,
+      "document_count": 4161,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "influenza_weekly_clean",
+      "keyword": "监测",
+      "category": "监测指标",
+      "occurrences": 4161,
+      "document_count": 4161,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "respiratory_weekly_clean",
+      "keyword": "监测",
+      "category": "监测指标",
+      "occurrences": 3576,
+      "document_count": 3576,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "respiratory_weekly_clean",
+      "keyword": "流感",
+      "category": "病种/病原体",
+      "occurrences": 2736,
+      "document_count": 2231,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "chinacdc_monthly_clean",
+      "keyword": "疫情",
+      "category": "风险词",
+      "occurrences": 1420,
+      "document_count": 1420,
+      "attention_label": "风险关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "respiratory_weekly_clean",
+      "keyword": "鼻病毒",
+      "category": "病原体",
+      "occurrences": 779,
+      "document_count": 779,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "respiratory_weekly_clean",
+      "keyword": "呼吸道合胞病毒",
+      "category": "病原体",
+      "occurrences": 459,
+      "document_count": 459,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "respiratory_weekly_clean",
+      "keyword": "新型冠状病毒",
+      "category": "病原体",
+      "occurrences": 344,
+      "document_count": 344,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "respiratory_weekly_clean",
+      "keyword": "副流感病毒",
+      "category": "病原体",
+      "occurrences": 305,
+      "document_count": 305,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    },
+    {
+      "source_table": "respiratory_weekly_clean",
+      "keyword": "人偏肺病毒",
+      "category": "病原体",
+      "occurrences": 250,
+      "document_count": 250,
+      "attention_label": "常规监测关注",
+      "explanation": "基于官方通报文本字段统计，非社交媒体主观情绪。"
+    }
+  ],
+  "core_conclusions": [
+    "相关性最高的组合为 precipitation_total 与 resp_outpatient_ili_covid_positive_rate，Pearson 相关系数为 0.8475。",
+    "聚类结果形成低风险、中风险和高风险三类城市周度记录，其中高风险记录数为 217。",
+    "异常检测共识别 83 个异常点，可作为后续早期预警指标候选。",
+    "清洗后数据能够支撑描述统计、趋势跟踪、气象相关性分析、风险分组和异常检测等成员 B 负责的核心分析任务。"
+  ],
+  "application_directions": [
+    "呼吸道传染病早期预警：基于阳性率、ILI%、暴发疫情数和异常检测结果识别风险升高周。",
+    "气象驱动风险提示：结合气温、湿度、降水等因素评估呼吸道病原体活跃风险。",
+    "重点病原体趋势监测：持续跟踪流感病毒、新冠病毒、呼吸道合胞病毒等重点对象。"
+  ],
+  "feasibility": {
+    "technical": "数据来源公开，清洗和分析脚本可复现，技术实现可行。",
+    "cost": "使用公开数据和本地脚本，部署成本较低。",
+    "demand": "学校、社区、医院和疾控场景均存在呼吸道风险监测需求。",
+    "data_availability": "当前已有 10 万级采集数据和多张清洗后分析表，数据基础可用。"
+  }
+}

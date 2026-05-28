@@ -1,0 +1,59 @@
+﻿table_name,field_name,data_type,unit,description
+descriptive_statistics.csv,dataset,string,-,来源数据表
+descriptive_statistics.csv,group_name,string,-,统计分组名称
+descriptive_statistics.csv,metric_name,string,-,指标名称
+descriptive_statistics.csv,observations,integer,rows,有效观测数量
+descriptive_statistics.csv,mean,float,varies,均值
+descriptive_statistics.csv,min,float,varies,最小值
+descriptive_statistics.csv,max,float,varies,最大值
+descriptive_statistics.csv,sum,float,varies,总和
+descriptive_statistics.csv,latest_period,string,-,最新时期
+descriptive_statistics.csv,latest_value,float,varies,最新时期对应值
+time_series_summary.csv,series_name,string,-,序列名称
+time_series_summary.csv,frequency,string,-,时间粒度
+time_series_summary.csv,start_period,string,-,起始时期
+time_series_summary.csv,end_period,string,-,结束时期
+time_series_summary.csv,latest_value,float,varies,最新值
+time_series_summary.csv,previous_value,float,varies,上一期值
+time_series_summary.csv,change,float,varies,变化量
+time_series_summary.csv,change_percent,float,ratio,变化率
+time_series_summary.csv,recent_4_period_avg,float,varies,最近 4 期均值
+time_series_summary.csv,trend_direction,string,-,趋势方向
+correlation_matrix.csv,x_variable,string,-,第一变量
+correlation_matrix.csv,y_variable,string,-,第二变量
+correlation_matrix.csv,sample_size,integer,rows,配对样本量
+correlation_matrix.csv,pearson_correlation,float,coefficient,Pearson 相关系数
+correlation_matrix.csv,abs_correlation,float,coefficient,相关系数绝对值
+correlation_matrix.csv,strength,string,-,相关强度
+correlation_matrix.csv,direction,string,-,正相关或负相关
+cluster_results.csv,ticker,string,-,股票代码
+cluster_results.csv,company_name,string,-,公司名称
+cluster_results.csv,industry_group,string,-,行业分组
+cluster_results.csv,cluster_id,integer,-,分组编号
+cluster_results.csv,risk_level,string,-,风险关注等级
+cluster_results.csv,risk_score,float,score,标准化综合风险得分
+cluster_results.csv,avg_close,float,USD,2024 年平均收盘价
+cluster_results.csv,year_end_adj_close,float,USD,2024 年年末复权收盘价
+cluster_results.csv,total_volume,float,shares,2024 年总成交量
+cluster_results.csv,avg_daily_return,float,ratio,2024 年平均日收益率
+cluster_results.csv,daily_return_volatility,float,ratio,2024 年日收益率波动率
+cluster_results.csv,latest_rd_expense_busd,float,billion USD,最新研发费用
+anomaly_detection_results.csv,series_name,string,-,异常检测序列名称
+anomaly_detection_results.csv,period,date,-,异常候选日期
+anomaly_detection_results.csv,value,float,varies,当前值
+anomaly_detection_results.csv,mean,float,varies,序列均值
+anomaly_detection_results.csv,stddev,float,varies,序列标准差
+anomaly_detection_results.csv,z_score,float,score,标准化异常分数
+anomaly_detection_results.csv,anomaly_type,string,-,异常高值或异常低值
+keyword_sentiment_analysis.csv,source_table,string,-,来源数据表
+keyword_sentiment_analysis.csv,keyword,string,-,关键词
+keyword_sentiment_analysis.csv,category,string,-,关键词类别
+keyword_sentiment_analysis.csv,occurrences,integer,count,出现次数
+keyword_sentiment_analysis.csv,document_count,integer,companies,覆盖公司数量
+keyword_sentiment_analysis.csv,attention_label,string,-,关注标签
+keyword_sentiment_analysis.csv,explanation,string,-,结果解释
+analysis_summary.json,generated_at,datetime,-,分析生成时间
+analysis_summary.json,input_rows,object,rows,输入表行数
+analysis_summary.json,output_rows,object,rows,输出表行数
+analysis_summary.json,key_findings,array,-,核心发现
+analysis_summary.json,limitations,array,-,分析局限

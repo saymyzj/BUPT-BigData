@@ -1,0 +1,141 @@
+﻿table_name,field_name,data_type,unit,missing_value_strategy,source_field,description
+chinacdc_monthly_clean.csv,source_name,string,-,保留为空并回查采集记录,source_name,数据源名称。
+chinacdc_monthly_clean.csv,source_url,string,-,关键追溯字段，原则上不可为空,source_url,原始网页链接。
+chinacdc_monthly_clean.csv,report_title,string,-,保留为空并回查原始网页,report_title,报告标题。
+chinacdc_monthly_clean.csv,report_year,integer,年,关键时间字段，原则上不可为空,report_year,报告年份。
+chinacdc_monthly_clean.csv,report_month,integer,月,关键时间字段，原则上不可为空,report_month,报告月份。
+chinacdc_monthly_clean.csv,period_month,string,-,由年月派生，缺失时回查年月字段,report_year + report_month,报告年月，格式为 YYYY-MM。
+chinacdc_monthly_clean.csv,region,string,-,缺失时默认回查来源，当前为全国,region,地区名称。
+chinacdc_monthly_clean.csv,disease_name,string,-,核心字段，缺失时回查原始表格,disease_name,标准化后的病种名称。
+chinacdc_monthly_clean.csv,disease_category,string,-,保留为空，不做填补,disease_category,病种类别或合计类别。
+chinacdc_monthly_clean.csv,is_respiratory_focus,integer,0/1,由病种名称派生，不手工填补,disease_name,是否为呼吸道重点病种。
+chinacdc_monthly_clean.csv,is_total_row,integer,0/1,由病种名称派生，不手工填补,disease_name,是否为总计或合计行。
+chinacdc_monthly_clean.csv,cases,integer,例,保留为空并在分析时排除,cases,发病数。
+chinacdc_monthly_clean.csv,deaths,integer,人,保留为空并在分析时排除,deaths,死亡数。
+chinacdc_monthly_clean.csv,incidence_rate,float,1/10万或源表口径,源数据未提供时保留为空,incidence_rate,发病率。
+chinacdc_monthly_clean.csv,mortality_rate,float,1/10万或源表口径,源数据未提供时保留为空,mortality_rate,死亡率。
+chinacdc_monthly_clean.csv,crawl_time,datetime,-,保留为空并回查运行日志,crawl_time,采集或解析时间。
+chinacdc_monthly_clean.csv,raw_file,string,-,保留为空并回查缓存目录,raw_file,原始缓存文件路径。
+respiratory_weekly_clean.csv,source_name,string,-,保留为空并回查采集记录,source_name,数据源名称。
+respiratory_weekly_clean.csv,source_url,string,-,关键追溯字段，原则上不可为空,source_url,原始网页链接。
+respiratory_weekly_clean.csv,report_title,string,-,保留为空并回查原始网页,report_title,报告标题。
+respiratory_weekly_clean.csv,report_year,integer,年,关键时间字段，原则上不可为空,report_year,报告年份。
+respiratory_weekly_clean.csv,report_week,integer,周,关键时间字段，原则上不可为空,report_week,报告周次。
+respiratory_weekly_clean.csv,year_week,string,-,由年份和周次派生,report_year + report_week,ISO 周标识，格式为 YYYY-Www。
+respiratory_weekly_clean.csv,week_start,date,-,缺失时由年份和周次推算,week_start,周起始日期。
+respiratory_weekly_clean.csv,week_end,date,-,缺失时由年份和周次推算,week_end,周结束日期。
+respiratory_weekly_clean.csv,region_group,string,-,缺失时保留为空或回查原文,region_group,地区分组，如全国、南方省份、北方省份。
+respiratory_weekly_clean.csv,age_group,string,-,字段不适用时保留为空,age_group,年龄组，仅年龄组排名记录适用。
+respiratory_weekly_clean.csv,surveillance_scene,string,-,字段不适用时保留为空,surveillance_scene,监测场景。
+respiratory_weekly_clean.csv,metric_type,string,-,核心分类字段，原则上不可为空,metric_type,指标类型。
+respiratory_weekly_clean.csv,pathogen_name,string,-,排名类记录不适用时保留为空,pathogen_name,标准化病原体名称。
+respiratory_weekly_clean.csv,positive_rate,float,%,排名类记录不适用时保留为空,positive_rate,病原体阳性率。
+respiratory_weekly_clean.csv,week_over_week_change,float,百分点,排名类记录不适用时保留为空,week_over_week_change,环比变化。
+respiratory_weekly_clean.csv,rank,integer,名,阳性率记录不适用时保留为空,rank,病原体排名。
+respiratory_weekly_clean.csv,ranked_pathogen,string,-,阳性率记录不适用时保留为空,ranked_pathogen,排名记录中的病原体名称。
+respiratory_weekly_clean.csv,crawl_time,datetime,-,保留为空并回查运行日志,crawl_time,采集或解析时间。
+respiratory_weekly_clean.csv,raw_file,string,-,保留为空并回查缓存目录,raw_file,原始缓存文件路径。
+influenza_weekly_clean.csv,source_name,string,-,保留为空并回查采集记录,source_name,数据源名称。
+influenza_weekly_clean.csv,source_url,string,-,关键追溯字段，原则上不可为空,source_url,原始网页链接。
+influenza_weekly_clean.csv,pdf_url,string,-,无 PDF 附件时保留为空,pdf_url,PDF 附件链接。
+influenza_weekly_clean.csv,report_title,string,-,保留为空并回查原始网页,report_title,报告标题。
+influenza_weekly_clean.csv,report_year,integer,年,关键时间字段，原则上不可为空,report_year,报告年份。
+influenza_weekly_clean.csv,report_week,integer,周,关键时间字段，原则上不可为空,report_week,报告周次。
+influenza_weekly_clean.csv,year_week,string,-,由年份和周次派生,report_year + report_week,ISO 周标识。
+influenza_weekly_clean.csv,issue_no,integer,期,缺失时保留为空,issue_no,周报期号。
+influenza_weekly_clean.csv,week_start,date,-,缺失时由年份和周次推算,week_start,周起始日期。
+influenza_weekly_clean.csv,week_end,date,-,缺失时由年份和周次推算,week_end,周结束日期。
+influenza_weekly_clean.csv,region_group,string,-,缺失时保留为空或回查原文,region_group,地区分组。
+influenza_weekly_clean.csv,metric_type,string,-,核心分类字段，原则上不可为空,metric_type,指标类型。
+influenza_weekly_clean.csv,metric_name,string,-,摘要类记录不适用时保留为空,metric_name,具体指标名称。
+influenza_weekly_clean.csv,metric_value,float,份/例/起,百分比或摘要类记录不适用时保留为空,metric_value,普通数值指标。
+influenza_weekly_clean.csv,metric_percent,float,%,数量或摘要类记录不适用时保留为空,metric_percent,百分比指标。
+influenza_weekly_clean.csv,dominant_subtype,string,-,非摘要类记录不适用时保留为空,dominant_subtype,优势流感亚型。
+influenza_weekly_clean.csv,outbreak_count,integer,起,非暴发疫情记录不适用时保留为空,outbreak_count,流感样病例暴发疫情数。
+influenza_weekly_clean.csv,indicator_value,float,按指标类型,无法数值化时保留为空,metric_value/metric_percent/outbreak_count,统一指标值。
+influenza_weekly_clean.csv,crawl_time,datetime,-,保留为空并回查运行日志,crawl_time,采集或解析时间。
+influenza_weekly_clean.csv,raw_file,string,-,保留为空并回查缓存目录,raw_file,HTML 原始缓存文件路径。
+influenza_weekly_clean.csv,pdf_file,string,-,无 PDF 附件时保留为空,pdf_file,PDF 原始缓存文件路径。
+weather_daily_clean.csv,source_name,string,-,保留为空并回查采集记录,source_name,数据源名称。
+weather_daily_clean.csv,source_url,string,-,关键追溯字段，原则上不可为空,source_url,NASA POWER API 请求链接。
+weather_daily_clean.csv,observation_date,date,-,关键时间字段，原则上不可为空,observation_date,气象观测日期。
+weather_daily_clean.csv,period_month,string,-,由观测日期派生,observation_date,观测月份，格式为 YYYY-MM。
+weather_daily_clean.csv,report_year,integer,年,由观测日期派生,observation_date,ISO 周所属年份。
+weather_daily_clean.csv,report_week,integer,周,由观测日期派生,observation_date,ISO 周次。
+weather_daily_clean.csv,year_week,string,-,由观测日期派生,observation_date,ISO 周标识。
+weather_daily_clean.csv,week_start,date,-,由观测日期派生,observation_date,周起始日期。
+weather_daily_clean.csv,week_end,date,-,由观测日期派生,observation_date,周结束日期。
+weather_daily_clean.csv,region,string,-,核心地区字段，原则上不可为空,region,省级行政区名称。
+weather_daily_clean.csv,city,string,-,核心地区字段，原则上不可为空,city,省会或首府城市名称。
+weather_daily_clean.csv,latitude,float,度,保留为空并回查城市配置,latitude,城市纬度。
+weather_daily_clean.csv,longitude,float,度,保留为空并回查城市配置,longitude,城市经度。
+weather_daily_clean.csv,avg_temperature,float,摄氏度,API 缺测时保留为空,avg_temperature,日平均气温。
+weather_daily_clean.csv,max_temperature,float,摄氏度,API 缺测时保留为空,max_temperature,日最高气温。
+weather_daily_clean.csv,min_temperature,float,摄氏度,API 缺测时保留为空,min_temperature,日最低气温。
+weather_daily_clean.csv,avg_humidity,float,%,API 缺测时保留为空,avg_humidity,日平均相对湿度。
+weather_daily_clean.csv,precipitation,float,毫米,API 缺测时保留为空,precipitation,日降水量。
+weather_daily_clean.csv,wind_speed,float,米/秒,API 缺测时保留为空,wind_speed,日平均风速。
+weather_daily_clean.csv,crawl_time,datetime,-,保留为空并回查运行日志,crawl_time,采集或解析时间。
+weather_daily_clean.csv,raw_file,string,-,保留为空并回查缓存目录,raw_file,原始 JSON 缓存文件路径。
+weather_weekly.csv,region,string,-,继承周度气象表,region,省级行政区名称。
+province_weekly_features.csv,region,string,-,继承周度气象表,region,省级行政区名称。
+weather_weekly.csv,city,string,-,继承周度气象表,city,省会或首府城市名称。
+province_weekly_features.csv,city,string,-,继承周度气象表,city,省会或首府城市名称。
+weather_weekly.csv,report_year,integer,年,由日度气象日期派生,report_year,ISO 周所属年份。
+province_weekly_features.csv,report_year,integer,年,由日度气象日期派生,report_year,ISO 周所属年份。
+weather_weekly.csv,report_week,integer,周,由日度气象日期派生,report_week,ISO 周次。
+province_weekly_features.csv,report_week,integer,周,由日度气象日期派生,report_week,ISO 周次。
+weather_weekly.csv,year_week,string,-,由年份和周次派生,year_week,ISO 周标识。
+province_weekly_features.csv,year_week,string,-,由年份和周次派生,year_week,ISO 周标识。
+weather_weekly.csv,week_start,date,-,由日度气象日期派生,week_start,周起始日期。
+province_weekly_features.csv,week_start,date,-,由日度气象日期派生,week_start,周起始日期。
+weather_weekly.csv,week_end,date,-,由日度气象日期派生,week_end,周结束日期。
+province_weekly_features.csv,week_end,date,-,由日度气象日期派生,week_end,周结束日期。
+weather_weekly.csv,days_count,integer,天,聚合结果字段，原则上不可为空,observation_date,参与聚合的日数。
+province_weekly_features.csv,days_count,integer,天,聚合结果字段，原则上不可为空,observation_date,参与聚合的日数。
+weather_weekly.csv,avg_temperature,float,摄氏度,忽略空值后求平均,avg_temperature,周平均气温。
+province_weekly_features.csv,avg_temperature,float,摄氏度,忽略空值后求平均,avg_temperature,周平均气温。
+weather_weekly.csv,max_temperature,float,摄氏度,忽略空值后求平均,max_temperature,周平均最高气温。
+province_weekly_features.csv,max_temperature,float,摄氏度,忽略空值后求平均,max_temperature,周平均最高气温。
+weather_weekly.csv,min_temperature,float,摄氏度,忽略空值后求平均,min_temperature,周平均最低气温。
+province_weekly_features.csv,min_temperature,float,摄氏度,忽略空值后求平均,min_temperature,周平均最低气温。
+weather_weekly.csv,avg_humidity,float,%,忽略空值后求平均,avg_humidity,周平均相对湿度。
+province_weekly_features.csv,avg_humidity,float,%,忽略空值后求平均,avg_humidity,周平均相对湿度。
+weather_weekly.csv,precipitation_total,float,毫米,忽略空值后求和,precipitation,周累计降水量。
+province_weekly_features.csv,precipitation_total,float,毫米,忽略空值后求和,precipitation,周累计降水量。
+weather_weekly.csv,wind_speed,float,米/秒,忽略空值后求平均,wind_speed,周平均风速。
+province_weekly_features.csv,wind_speed,float,米/秒,忽略空值后求平均,wind_speed,周平均风速。
+weather_monthly.csv,region,string,-,继承日度气象表,region,省级行政区名称。
+weather_monthly.csv,city,string,-,继承日度气象表,city,省会或首府城市名称。
+weather_monthly.csv,period_month,string,-,由观测日期派生,period_month,观测月份，格式为 YYYY-MM。
+weather_monthly.csv,days_count,integer,天,聚合结果字段，原则上不可为空,observation_date,参与聚合的日数。
+weather_monthly.csv,avg_temperature,float,摄氏度,忽略空值后求平均,avg_temperature,月平均气温。
+weather_monthly.csv,max_temperature,float,摄氏度,忽略空值后求平均,max_temperature,月平均最高气温。
+weather_monthly.csv,min_temperature,float,摄氏度,忽略空值后求平均,min_temperature,月平均最低气温。
+weather_monthly.csv,avg_humidity,float,%,忽略空值后求平均,avg_humidity,月平均相对湿度。
+weather_monthly.csv,precipitation_total,float,毫米,忽略空值后求和,precipitation,月累计降水量。
+weather_monthly.csv,wind_speed,float,米/秒,忽略空值后求平均,wind_speed,月平均风速。
+province_weekly_features.csv,resp_outpatient_ili_covid_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_influenza_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_rsv_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_mycoplasma_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_adenovirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_hmpv_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_parainfluenza_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_common_coronavirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_bocavirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_outpatient_ili_rhinovirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_covid_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_influenza_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_rsv_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_mycoplasma_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_adenovirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_hmpv_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_parainfluenza_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_common_coronavirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_bocavirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,resp_hospital_sari_rhinovirus_positive_rate,float,%,该周未采集到对应指标时保留为空,respiratory_weekly_clean.positive_rate,全国急性呼吸道哨点监测病原体阳性率特征。
+province_weekly_features.csv,influenza_ili_percent_north,float,%,该周未采集到对应指标时保留为空,influenza_weekly_clean.metric_percent,北方省份流感样病例百分比。
+province_weekly_features.csv,influenza_ili_percent_south,float,%,该周未采集到对应指标时保留为空,influenza_weekly_clean.metric_percent,南方省份流感样病例百分比。
+province_weekly_features.csv,influenza_outbreak_count,integer,起,该周未采集到对应指标时保留为空,influenza_weekly_clean.outbreak_count,全国流感样病例暴发疫情数。
+province_weekly_features.csv,influenza_dominant_subtype,string,-,该周未采集到对应指标时保留为空,influenza_weekly_clean.dominant_subtype,流感周报摘要中提取的优势毒株或主要型别。

@@ -1,0 +1,16 @@
+﻿x_variable,y_variable,sample_size,pearson_correlation,abs_correlation,strength,direction
+avg_close,year_end_adj_close,43,0.977485,0.977485,strong,positive
+avg_close,total_volume,43,-0.209489,0.209489,weak,negative
+avg_close,avg_daily_return,43,0.191175,0.191175,very_weak,positive
+avg_close,daily_return_volatility,43,-0.368888,0.368888,weak,negative
+avg_close,latest_rd_expense_busd,42,0.091738,0.091738,very_weak,positive
+year_end_adj_close,total_volume,43,-0.222152,0.222152,weak,negative
+year_end_adj_close,avg_daily_return,43,0.296915,0.296915,weak,positive
+year_end_adj_close,daily_return_volatility,43,-0.387462,0.387462,weak,negative
+year_end_adj_close,latest_rd_expense_busd,42,0.061465,0.061465,very_weak,positive
+total_volume,avg_daily_return,43,0.022496,0.022496,very_weak,positive
+total_volume,daily_return_volatility,43,-0.194378,0.194378,very_weak,negative
+total_volume,latest_rd_expense_busd,42,0.584200,0.584200,moderate,positive
+avg_daily_return,daily_return_volatility,43,-0.480044,0.480044,moderate,negative
+avg_daily_return,latest_rd_expense_busd,42,0.090346,0.090346,very_weak,positive
+daily_return_volatility,latest_rd_expense_busd,42,-0.344338,0.344338,weak,negative
