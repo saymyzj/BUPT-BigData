@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>呼吸道传染病监测与早期预警 Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="filter-rail" aria-label="可视化筛选条件">
+        <div class="brand">
+          <div class="brand-mark">C</div>
+          <div>
+            <h1>呼吸道传染病监测</h1>
+            <p>成员 C 可视化 Dashboard</p>
+          </div>
+        </div>
+
+        <section class="control-group">
+          <label for="yearFilter">年份</label>
+          <select id="yearFilter"></select>
+        </section>
+
+        <section class="control-group">
+          <label for="pathogenFilter">病原体</label>
+          <select id="pathogenFilter"></select>
+        </section>
+
+        <section class="control-group">
+          <label for="sceneFilter">监测场景</label>
+          <select id="sceneFilter"></select>
+        </section>
+
+        <section class="control-group">
+          <label for="cityFilter">省市</label>
+          <select id="cityFilter"></select>
+        </section>
+
+        <section class="control-group">
+          <label for="trendMetric">趋势指标</label>
+          <select id="trendMetric">
+            <option value="ili">ILI%</option>
+            <option value="flu_positive">流感实验室阳性率</option>
+            <option value="pathogen">病原体阳性率</option>
+            <option value="outbreak">流感样病例暴发数</option>
+          </select>
+        </section>
+
+        <section class="control-group">
+          <label>周范围</label>
+          <div class="date-row">
+            <select id="startWeek"></select>
+            <select id="endWeek"></select>
+          </div>
+        </section>
+
+        <section class="control-group">
+          <label for="zoomRange">趋势缩放</label>
+          <input id="zoomRange" type="range" min="20" max="100" value="100" />
+        </section>
+
+        <button id="resetFilters" class="primary-action" type="button">重置筛选</button>
+
+        <div class="note">
+          数据来自中国疾控中心公开监测数据和气象数据，已由成员 AB 完成采集、清洗和分析。本页面用于课程研究展示，不替代疾控业务判断。
+        </div>
+      </aside>
+
+      <main class="dashboard">
+        <header class="topbar">
+          <div>
+            <h2>呼吸道传染病监测与早期预警分析</h2>
+            <p id="scopeText">读取数据中...</p>
+          </div>
+          <div class="status-strip">
+            <span class="status-dot"></span>
+            <span>2024-2026 周度监测</span>
+          </div>
+        </header>
+
+        <section class="kpi-grid" aria-label="关键指标">
+          <article class="kpi-card">
+            <span>周度监测范围</span>
+            <strong id="weekRange">-</strong>
+          </article>
+          <article class="kpi-card">
+            <span>最新阳性率</span>
+            <strong id="latestRate">-</strong>
+          </article>
+          <article class="kpi-card">
+            <span>高风险周记录</span>
+            <strong id="highRiskRows">-</strong>
+          </article>
+          <article class="kpi-card">
+            <span>异常点</span>
+            <strong id="anomalyCountKpi">-</strong>
+          </article>
+        </section>
+
+        <section class="workspace">
+          <article class="panel trend-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>周度趋势</h3>
+                <p id="trendSubtitle">按筛选条件聚合展示</p>
+              </div>
+              <div class="legend">
+                <span class="legend-swatch teal"></span>
+                <span id="metricLegend">病原体阳性率</span>
+              </div>
+            </div>
+            <div id="trendChart" class="chart tall-chart"></div>
+          </article>
+
+          <article class="panel composition-panel">
+            <div class="panel-heading">
+              <div>
+                <h3>最新病原体构成</h3>
+                <p id="donutSubtitle">按最新周平均阳性率</p>
+              </div>
+            </div>
+            <div id="donutChart" class="donut-wrap"></div>
+          </article>
+        </section>
+
+        <section class="lower-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>监测场景对比</h3>
+                <p id="sceneBarSubtitle">门急诊与住院严重病例阳性率</p>
+              </div>
+            </div>
+            <div id="sceneBarChart" class="chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>气象与风险散点</h3>
+                <p>温度、湿度与风险得分</p>
+              </div>
+            </div>
+            <div id="scatterChart" class="chart"></div>
+          </article>
+        </section>
+
+        <section class="map-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>省市风险分布图</h3>
+                <p>按筛选周范围计算平均风险得分</p>
+              </div>
+            </div>
+            <div id="provinceMap" class="province-map"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>强相关指标</h3>
+                <p>气象变量与健康监测指标</p>
+              </div>
+            </div>
+            <div id="correlationList" class="correlation-list"></div>
+          </article>
+        </section>
+
+        <section class="insight-grid">
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>风险等级分布</h3>
+                <p>按当前筛选范围统计城市周度记录</p>
+              </div>
+            </div>
+            <div id="riskDistributionChart" class="chart compact-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3 id="monthlyDiseaseTitle">重点病种月度发病数</h3>
+                <p id="monthlyDiseaseSubtitle">最新月份主要呼吸道相关病种</p>
+              </div>
+            </div>
+            <div id="monthlyDiseaseChart" class="chart compact-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>异常点周度分布</h3>
+                <p>按异常检测结果聚合</p>
+              </div>
+            </div>
+            <div id="anomalyTimelineChart" class="chart compact-chart"></div>
+          </article>
+        </section>
+
+        <section class="panel keyword-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>官方报告关注关键词</h3>
+              <p id="keywordSubtitle">基于当前筛选条件统计</p>
+            </div>
+          </div>
+          <div id="keywordCloud" class="keyword-cloud"></div>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="panel-heading">
+            <div>
+              <h3>异常检测与预警候选</h3>
+              <p>Z-score 异常点，需结合周报和领域知识人工复核</p>
+            </div>
+            <span id="anomalyCount" class="table-count">-</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>序列</th>
+                  <th>时期</th>
+                  <th>数值</th>
+                  <th>均值</th>
+                  <th>z-score</th>
+                  <th>类型</th>
+                </tr>
+              </thead>
+              <tbody id="anomalyTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="tooltip" role="status" aria-live="polite"></div>
+    <script src="../../data/dashboard-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,4357 @@
+{
+  "meta": {
+    "title": "医药健康公司研发投入与市场风险可视化 Dashboard",
+    "source_root": "E:\\BUPT\\BUPT-BigData\\数据分析skill复用测试",
+    "generated_from": [
+      "data/processed/stock_daily_clean.csv",
+      "data/processed/rd_annual_clean.csv",
+      "data/processed/company_2024_features.csv",
+      "data/analysis/cluster_results.csv",
+      "data/analysis/correlation_matrix.csv",
+      "data/analysis/anomaly_detection_results.csv",
+      "data/analysis/keyword_sentiment_analysis.csv"
+    ],
+    "stock_rows": 10836,
+    "company_count": 43,
+    "months": [
+      "2024-01",
+      "2024-02",
+      "2024-03",
+      "2024-04",
+      "2024-05",
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10",
+      "2024-11",
+      "2024-12"
+    ],
+    "industries": [
+      "Biotechnology",
+      "Diagnostics",
+      "Life Sciences Tools",
+      "Medical Devices",
+      "Pharmaceuticals"
+    ],
+    "risk_counts": {
+      "high_attention": 15,
+      "medium_attention": 13,
+      "low_attention": 15
+    }
+  },
+  "inventory": [
+    {
+      "file": "data/processed/stock_daily_clean.csv",
+      "rows": 10836,
+      "columns": 17,
+      "fields": [
+        "ticker",
+        "company_name",
+        "industry_group",
+        "trade_date",
+        "trade_year",
+        "trade_month",
+        "open",
+        "high",
+        "low",
+        "close",
+        "adj_close",
+        "volume",
+        "daily_return",
+        "return_pct",
+        "source_url",
+        "crawl_time",
+        "raw_file"
+      ],
+      "time_fields": [
+        "trade_date",
+        "trade_year",
+        "trade_month"
+      ],
+      "time_range": [
+        "2024",
+        "2024-12-31"
+      ],
+      "ticker_count": 43,
+      "missing_key_fields": []
+    },
+    {
+      "file": "data/processed/rd_annual_clean.csv",
+      "rows": 527,
+      "columns": 14,
+      "fields": [
+        "ticker",
+        "company_name",
+        "industry_group",
+        "cik",
+        "fiscal_year",
+        "rd_expense_usd",
+        "rd_expense_musd",
+        "rd_expense_busd",
+        "sec_fact_tag",
+        "form",
+        "filed_date",
+        "source_url",
+        "crawl_time",
+        "raw_file"
+      ],
+      "time_fields": [
+        "fiscal_year",
+        "filed_date"
+      ],
+      "time_range": [
+        "2009",
+        "2026-03-09"
+      ],
+      "ticker_count": 42,
+      "missing_key_fields": []
+    },
+    {
+      "file": "data/processed/company_2024_features.csv",
+      "rows": 43,
+      "columns": 14,
+      "fields": [
+        "ticker",
+        "company_name",
+        "industry_group",
+        "trade_year",
+        "trading_days",
+        "avg_close",
+        "year_end_adj_close",
+        "total_volume",
+        "avg_daily_return",
+        "daily_return_volatility",
+        "latest_rd_fiscal_year",
+        "latest_rd_expense_usd",
+        "latest_rd_expense_musd",
+        "latest_rd_expense_busd"
+      ],
+      "time_fields": [
+        "trade_year",
+        "year_end_adj_close",
+        "latest_rd_fiscal_year"
+      ],
+      "time_range": [
+        "1.2699999809265137",
+        "95.17072296142578"
+      ],
+      "ticker_count": 43,
+      "missing_key_fields": []
+    },
+    {
+      "file": "data/analysis/cluster_results.csv",
+      "rows": 43,
+      "columns": 12,
+      "fields": [
+        "ticker",
+        "company_name",
+        "industry_group",
+        "cluster_id",
+        "risk_level",
+        "risk_score",
+        "avg_close",
+        "year_end_adj_close",
+        "total_volume",
+        "avg_daily_return",
+        "daily_return_volatility",
+        "latest_rd_expense_busd"
+      ],
+      "time_fields": [
+        "year_end_adj_close"
+      ],
+      "time_range": [
+        "1.270000",
+        "95.170723"
+      ],
+      "ticker_count": 43,
+      "missing_key_fields": []
+    },
+    {
+      "file": "data/analysis/correlation_matrix.csv",
+      "rows": 15,
+      "columns": 7,
+      "fields": [
+        "x_variable",
+        "y_variable",
+        "sample_size",
+        "pearson_correlation",
+        "abs_correlation",
+        "strength",
+        "direction"
+      ],
+      "time_fields": [],
+      "time_range": [],
+      "ticker_count": 0,
+      "missing_key_fields": []
+    },
+    {
+      "file": "data/analysis/anomaly_detection_results.csv",
+      "rows": 864,
+      "columns": 7,
+      "fields": [
+        "series_name",
+        "period",
+        "value",
+        "mean",
+        "stddev",
+        "z_score",
+        "anomaly_type"
+      ],
+      "time_fields": [
+        "period"
+      ],
+      "time_range": [
+        "2024-01-02",
+        "2024-12-20"
+      ],
+      "ticker_count": 0,
+      "missing_key_fields": []
+    }
+  ],
+  "monthly_trend": [
+    {
+      "period": "2024-01",
+      "avg_adj_close": 172.898,
+      "avg_return_pct": -0.001,
+      "total_volume_b": 3.51
+    },
+    {
+      "period": "2024-02",
+      "avg_adj_close": 178.13,
+      "avg_return_pct": 0.236,
+      "total_volume_b": 3.236
+    },
+    {
+      "period": "2024-03",
+      "avg_adj_close": 179.993,
+      "avg_return_pct": 0.035,
+      "total_volume_b": 3.483
+    },
+    {
+      "period": "2024-04",
+      "avg_adj_close": 173.079,
+      "avg_return_pct": -0.404,
+      "total_volume_b": 3.189
+    },
+    {
+      "period": "2024-05",
+      "avg_adj_close": 179.75,
+      "avg_return_pct": 0.163,
+      "total_volume_b": 3.474
+    },
+    {
+      "period": "2024-06",
+      "avg_adj_close": 186.758,
+      "avg_return_pct": 0.215,
+      "total_volume_b": 3.148
+    },
+    {
+      "period": "2024-07",
+      "avg_adj_close": 190.533,
+      "avg_return_pct": 0.193,
+      "total_volume_b": 3.467
+    },
+    {
+      "period": "2024-08",
+      "avg_adj_close": 194.822,
+      "avg_return_pct": 0.016,
+      "total_volume_b": 3.016
+    },
+    {
+      "period": "2024-09",
+      "avg_adj_close": 196.439,
+      "avg_return_pct": -0.125,
+      "total_volume_b": 2.94
+    },
+    {
+      "period": "2024-10",
+      "avg_adj_close": 190.621,
+      "avg_return_pct": -0.173,
+      "total_volume_b": 3.236
+    },
+    {
+      "period": "2024-11",
+      "avg_adj_close": 181.635,
+      "avg_return_pct": 0.115,
+      "total_volume_b": 3.845
+    },
+    {
+      "period": "2024-12",
+      "avg_adj_close": 177.598,
+      "avg_return_pct": -0.386,
+      "total_volume_b": 3.583
+    }
+  ],
+  "company_trend": {
+    "ABBV": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 150.689,
+        "avg_return_pct": 0.192
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 161.892,
+        "avg_return_pct": 0.346
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 165.989,
+        "avg_return_pct": 0.174
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 156.185,
+        "avg_return_pct": -0.455
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 150.401,
+        "avg_return_pct": -0.033
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 157.58,
+        "avg_return_pct": 0.332
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 162.763,
+        "avg_return_pct": 0.408
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 181.859,
+        "avg_return_pct": 0.267
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 183.502,
+        "avg_return_pct": 0.036
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 182.625,
+        "avg_return_pct": 0.184
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 172.58,
+        "avg_return_pct": -0.49
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 167.575,
+        "avg_return_pct": -0.131
+      }
+    ],
+    "ABT": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 107.627,
+        "avg_return_pct": 0.177
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 110.088,
+        "avg_return_pct": 0.243
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 110.972,
+        "avg_return_pct": -0.207
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 104.464,
+        "avg_return_pct": -0.29
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 100.106,
+        "avg_return_pct": -0.162
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 100.63,
+        "avg_return_pct": 0.094
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 99.991,
+        "avg_return_pct": 0.124
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 107.094,
+        "avg_return_pct": 0.311
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 110.963,
+        "avg_return_pct": 0.038
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 111.675,
+        "avg_return_pct": 0.001
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 113.622,
+        "avg_return_pct": 0.24
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 110.981,
+        "avg_return_pct": -0.229
+      }
+    ],
+    "ALNY": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 188.084,
+        "avg_return_pct": -0.58
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 161.889,
+        "avg_return_pct": -0.623
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 149.411,
+        "avg_return_pct": -0.045
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 148.567,
+        "avg_return_pct": -0.161
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 150.065,
+        "avg_return_pct": 0.151
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 177.695,
+        "avg_return_pct": 2.884
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 244.862,
+        "avg_return_pct": -0.095
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 271.1,
+        "avg_return_pct": 0.529
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 265.586,
+        "avg_return_pct": 0.24
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 282.714,
+        "avg_return_pct": -0.116
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 257.841,
+        "avg_return_pct": -0.216
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 246.304,
+        "avg_return_pct": -0.335
+      }
+    ],
+    "AMGN": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 284.439,
+        "avg_return_pct": 0.281
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 273.116,
+        "avg_return_pct": -0.63
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 258.203,
+        "avg_return_pct": 0.193
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 252.565,
+        "avg_return_pct": -0.161
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 286.174,
+        "avg_return_pct": 0.573
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 289.086,
+        "avg_return_pct": 0.118
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 306.958,
+        "avg_return_pct": 0.286
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 308.159,
+        "avg_return_pct": 0.064
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 311.151,
+        "avg_return_pct": -0.164
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 302.69,
+        "avg_return_pct": -0.023
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 284.797,
+        "avg_return_pct": -0.55
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 256.521,
+        "avg_return_pct": -0.384
+      }
+    ],
+    "ARWR": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 34.575,
+        "avg_return_pct": 0.266
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 31.162,
+        "avg_return_pct": 0.073
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 30.105,
+        "avg_return_pct": -0.467
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 24.382,
+        "avg_return_pct": -1.01
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 24.125,
+        "avg_return_pct": 0.134
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 25.317,
+        "avg_return_pct": 0.725
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 27.625,
+        "avg_return_pct": 0.459
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 24.298,
+        "avg_return_pct": -0.762
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 20.983,
+        "avg_return_pct": -0.984
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 19.499,
+        "avg_return_pct": -0.002
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 20.75,
+        "avg_return_pct": 1.738
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 21.646,
+        "avg_return_pct": -1.466
+      }
+    ],
+    "BDX": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 179.06,
+        "avg_return_pct": -0.127
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 180.918,
+        "avg_return_pct": -0.062
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 180.613,
+        "avg_return_pct": 0.272
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 179.105,
+        "avg_return_pct": -0.236
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 176.551,
+        "avg_return_pct": -0.044
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 178.432,
+        "avg_return_pct": 0.067
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 175.244,
+        "avg_return_pct": 0.149
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 179.164,
+        "avg_return_pct": 0.031
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 179.169,
+        "avg_return_pct": -0.001
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 181.723,
+        "avg_return_pct": -0.135
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 173.789,
+        "avg_return_pct": -0.244
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 171.603,
+        "avg_return_pct": 0.133
+      }
+    ],
+    "BEAM": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 25.645,
+        "avg_return_pct": -0.451
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 32.327,
+        "avg_return_pct": 2.721
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 35.769,
+        "avg_return_pct": -0.848
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 25.863,
+        "avg_return_pct": -1.952
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 23.543,
+        "avg_return_pct": 0.586
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 24.233,
+        "avg_return_pct": -0.033
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 27.073,
+        "avg_return_pct": 1.468
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 25.59,
+        "avg_return_pct": -0.686
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 24.745,
+        "avg_return_pct": -0.377
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 23.435,
+        "avg_return_pct": -0.423
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 25.837,
+        "avg_return_pct": 1.278
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 27.506,
+        "avg_return_pct": -0.358
+      }
+    ],
+    "BIIB": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 251.452,
+        "avg_return_pct": -0.404
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 230.391,
+        "avg_return_pct": -0.619
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 219.9,
+        "avg_return_pct": -0.021
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 202.403,
+        "avg_return_pct": 0.0
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 222.641,
+        "avg_return_pct": 0.224
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 228.444,
+        "avg_return_pct": 0.171
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 224.966,
+        "avg_return_pct": -0.358
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 203.543,
+        "avg_return_pct": -0.175
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 198.111,
+        "avg_return_pct": -0.266
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 185.78,
+        "avg_return_pct": -0.457
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 164.936,
+        "avg_return_pct": -0.392
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 153.483,
+        "avg_return_pct": -0.224
+      }
+    ],
+    "BMY": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 45.292,
+        "avg_return_pct": -0.322
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 44.638,
+        "avg_return_pct": 0.197
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 47.173,
+        "avg_return_pct": 0.34
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 44.406,
+        "avg_return_pct": -0.88
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 39.137,
+        "avg_return_pct": -0.298
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 37.865,
+        "avg_return_pct": 0.065
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 39.544,
+        "avg_return_pct": 0.731
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 44.507,
+        "avg_return_pct": 0.233
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 45.805,
+        "avg_return_pct": 0.185
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 49.347,
+        "avg_return_pct": 0.388
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 53.484,
+        "avg_return_pct": 0.337
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 53.624,
+        "avg_return_pct": -0.208
+      }
+    ],
+    "BSX": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 60.043,
+        "avg_return_pct": 0.452
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 65.701,
+        "avg_return_pct": 0.232
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 67.361,
+        "avg_return_pct": 0.176
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 69.177,
+        "avg_return_pct": 0.229
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 74.121,
+        "avg_return_pct": 0.232
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 76.778,
+        "avg_return_pct": 0.101
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 76.535,
+        "avg_return_pct": -0.178
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 77.364,
+        "avg_return_pct": 0.468
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 82.967,
+        "avg_return_pct": 0.124
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 85.814,
+        "avg_return_pct": 0.016
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 88.466,
+        "avg_return_pct": 0.388
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 90.044,
+        "avg_return_pct": -0.066
+      }
+    ],
+    "CRSP": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 63.228,
+        "avg_return_pct": -0.19
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 76.937,
+        "avg_return_pct": 1.55
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 75.016,
+        "avg_return_pct": -1.039
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 59.409,
+        "avg_return_pct": -1.11
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 55.003,
+        "avg_return_pct": 0.102
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 59.317,
+        "avg_return_pct": 0.077
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 56.389,
+        "avg_return_pct": 0.322
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 48.662,
+        "avg_return_pct": -0.782
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 46.813,
+        "avg_return_pct": -0.048
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 47.078,
+        "avg_return_pct": -0.03
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 49.642,
+        "avg_return_pct": 0.562
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 45.067,
+        "avg_return_pct": -1.173
+      }
+    ],
+    "DHR": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 228.398,
+        "avg_return_pct": 0.122
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 245.691,
+        "avg_return_pct": 0.276
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 249.419,
+        "avg_return_pct": -0.058
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 241.04,
+        "avg_return_pct": -0.041
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 253.711,
+        "avg_return_pct": 0.19
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 255.206,
+        "avg_return_pct": -0.125
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 250.37,
+        "avg_return_pct": 0.486
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 266.681,
+        "avg_return_pct": -0.124
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 269.238,
+        "avg_return_pct": 0.173
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 260.49,
+        "avg_return_pct": -0.528
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 237.528,
+        "avg_return_pct": -0.117
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 230.381,
+        "avg_return_pct": -0.192
+      }
+    ],
+    "DXCM": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 125.418,
+        "avg_return_pct": -0.052
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 118.979,
+        "avg_return_pct": -0.252
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 132.715,
+        "avg_return_pct": 0.979
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 135.033,
+        "avg_return_pct": -0.347
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 127.472,
+        "avg_return_pct": -0.296
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 115.249,
+        "avg_return_pct": -0.226
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 103.963,
+        "avg_return_pct": -1.789
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 72.076,
+        "avg_return_pct": 0.151
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 69.135,
+        "avg_return_pct": -0.15
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 70.197,
+        "avg_return_pct": 0.237
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 73.49,
+        "avg_return_pct": 0.533
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 78.76,
+        "avg_return_pct": 0.007
+      }
+    ],
+    "EDIT": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 8.55,
+        "avg_return_pct": -1.688
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 8.001,
+        "avg_return_pct": 2.043
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 8.364,
+        "avg_return_pct": -1.457
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 6.082,
+        "avg_return_pct": -1.563
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 5.555,
+        "avg_return_pct": 0.118
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 5.229,
+        "avg_return_pct": -0.468
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 5.246,
+        "avg_return_pct": 0.758
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 4.098,
+        "avg_return_pct": -1.573
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 3.652,
+        "avg_return_pct": -0.408
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 3.233,
+        "avg_return_pct": -0.581
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 2.725,
+        "avg_return_pct": -1.197
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 1.63,
+        "avg_return_pct": -2.399
+      }
+    ],
+    "EW": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 74.509,
+        "avg_return_pct": 0.21
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 86.027,
+        "avg_return_pct": 0.419
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 91.946,
+        "avg_return_pct": 0.612
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 89.606,
+        "avg_return_pct": -0.541
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 87.271,
+        "avg_return_pct": 0.13
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 88.823,
+        "avg_return_pct": 0.329
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 83.598,
+        "avg_return_pct": -1.438
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 66.675,
+        "avg_return_pct": 0.488
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 67.195,
+        "avg_return_pct": -0.279
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 68.145,
+        "avg_return_pct": 0.082
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 68.41,
+        "avg_return_pct": 0.321
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 73.519,
+        "avg_return_pct": 0.191
+      }
+    ],
+    "EXEL": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 22.63,
+        "avg_return_pct": -0.465
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 21.009,
+        "avg_return_pct": 0.055
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 23.024,
+        "avg_return_pct": 0.408
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 23.238,
+        "avg_return_pct": -0.042
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 21.255,
+        "avg_return_pct": -0.335
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 22.044,
+        "avg_return_pct": 0.19
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 22.558,
+        "avg_return_pct": 0.2
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 25.864,
+        "avg_return_pct": 0.518
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 26.268,
+        "avg_return_pct": -0.004
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 27.89,
+        "avg_return_pct": 1.131
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 35.335,
+        "avg_return_pct": 0.478
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 34.669,
+        "avg_return_pct": -0.419
+      }
+    ],
+    "FATE": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 4.545,
+        "avg_return_pct": 2.807
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 6.704,
+        "avg_return_pct": 0.878
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 7.401,
+        "avg_return_pct": 0.355
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 5.529,
+        "avg_return_pct": -2.72
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 3.863,
+        "avg_return_pct": -0.244
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 3.64,
+        "avg_return_pct": -0.521
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 4.213,
+        "avg_return_pct": 2.443
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 3.759,
+        "avg_return_pct": -1.56
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 3.682,
+        "avg_return_pct": -0.15
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 3.004,
+        "avg_return_pct": -1.594
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 2.466,
+        "avg_return_pct": 1.767
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 2.04,
+        "avg_return_pct": -2.849
+      }
+    ],
+    "GILD": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 77.008,
+        "avg_return_pct": -0.275
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 68.759,
+        "avg_return_pct": -0.4
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 68.727,
+        "avg_return_pct": 0.134
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 63.884,
+        "avg_return_pct": -0.523
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 61.9,
+        "avg_return_pct": -0.058
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 62.513,
+        "avg_return_pct": 0.436
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 68.192,
+        "avg_return_pct": 0.483
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 71.825,
+        "avg_return_pct": 0.18
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 78.482,
+        "avg_return_pct": 0.35
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 82.91,
+        "avg_return_pct": 0.255
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 87.861,
+        "avg_return_pct": 0.228
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 89.163,
+        "avg_return_pct": 0.037
+      }
+    ],
+    "HALO": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 34.975,
+        "avg_return_pct": -0.471
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 36.687,
+        "avg_return_pct": 0.836
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 40.925,
+        "avg_return_pct": 0.115
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 39.195,
+        "avg_return_pct": -0.286
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 43.212,
+        "avg_return_pct": 0.705
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 49.997,
+        "avg_return_pct": 0.928
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 53.888,
+        "avg_return_pct": 0.255
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 58.706,
+        "avg_return_pct": 0.677
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 59.6,
+        "avg_return_pct": -0.524
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 53.01,
+        "avg_return_pct": -0.496
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 52.731,
+        "avg_return_pct": -0.076
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 47.995,
+        "avg_return_pct": -0.03
+      }
+    ],
+    "HOLX": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 73.327,
+        "avg_return_pct": 0.138
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 74.119,
+        "avg_return_pct": -0.036
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 75.787,
+        "avg_return_pct": 0.28
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 76.625,
+        "avg_return_pct": -0.122
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 74.894,
+        "avg_return_pct": -0.119
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 73.107,
+        "avg_return_pct": 0.038
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 77.272,
+        "avg_return_pct": 0.436
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 81.426,
+        "avg_return_pct": -0.016
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 81.385,
+        "avg_return_pct": 0.019
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 80.703,
+        "avg_return_pct": -0.028
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 79.431,
+        "avg_return_pct": -0.07
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 74.048,
+        "avg_return_pct": -0.46
+      }
+    ],
+    "IDXX": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 532.723,
+        "avg_return_pct": -0.293
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 563.163,
+        "avg_return_pct": 0.578
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 544.28,
+        "avg_return_pct": -0.311
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 501.037,
+        "avg_return_pct": -0.404
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 506.331,
+        "avg_return_pct": 0.062
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 498.184,
+        "avg_return_pct": -0.099
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 479.143,
+        "avg_return_pct": -0.091
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 482.172,
+        "avg_return_pct": 0.063
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 497.128,
+        "avg_return_pct": 0.253
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 464.348,
+        "avg_return_pct": -0.913
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 422.763,
+        "avg_return_pct": 0.19
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 425.565,
+        "avg_return_pct": -0.084
+      }
+    ],
+    "INCY": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 62.513,
+        "avg_return_pct": -0.531
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 59.004,
+        "avg_return_pct": -0.019
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 58.433,
+        "avg_return_pct": -0.113
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 53.611,
+        "avg_return_pct": -0.407
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 55.945,
+        "avg_return_pct": 0.495
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 60.941,
+        "avg_return_pct": 0.264
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 63.716,
+        "avg_return_pct": 0.341
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 63.201,
+        "avg_return_pct": 0.052
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 64.449,
+        "avg_return_pct": 0.053
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 67.103,
+        "avg_return_pct": 0.533
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 76.553,
+        "avg_return_pct": 0.07
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 70.756,
+        "avg_return_pct": -0.346
+      }
+    ],
+    "IONS": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 51.756,
+        "avg_return_pct": -0.125
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 47.522,
+        "avg_return_pct": -0.606
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 43.513,
+        "avg_return_pct": -0.201
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 42.116,
+        "avg_return_pct": -0.215
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 39.035,
+        "avg_return_pct": -0.398
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 42.03,
+        "avg_return_pct": 1.287
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 48.476,
+        "avg_return_pct": 0.196
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 47.677,
+        "avg_return_pct": -0.142
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 43.118,
+        "avg_return_pct": -0.811
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 38.69,
+        "avg_return_pct": -0.168
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 36.599,
+        "avg_return_pct": -0.322
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 36.683,
+        "avg_return_pct": -0.083
+      }
+    ],
+    "ISRG": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 358.02,
+        "avg_return_pct": 0.7
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 384.65,
+        "avg_return_pct": 0.101
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 391.923,
+        "avg_return_pct": 0.187
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 379.757,
+        "avg_return_pct": -0.327
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 392.085,
+        "avg_return_pct": 0.379
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 426.915,
+        "avg_return_pct": 0.539
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 441.577,
+        "avg_return_pct": 0.03
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 471.867,
+        "avg_return_pct": 0.474
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 484.988,
+        "avg_return_pct": -0.007
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 495.573,
+        "avg_return_pct": 0.137
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 532.505,
+        "avg_return_pct": 0.372
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 537.44,
+        "avg_return_pct": -0.172
+      }
+    ],
+    "JNJ": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 149.383,
+        "avg_return_pct": -0.032
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 147.854,
+        "avg_return_pct": 0.118
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 148.508,
+        "avg_return_pct": -0.097
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 140.039,
+        "avg_return_pct": -0.403
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 140.794,
+        "avg_return_pct": 0.111
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 138.668,
+        "avg_return_pct": -0.016
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 144.045,
+        "avg_return_pct": 0.359
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 152.649,
+        "avg_return_pct": 0.264
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 156.772,
+        "avg_return_pct": -0.113
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 154.151,
+        "avg_return_pct": -0.056
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 148.018,
+        "avg_return_pct": -0.111
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 141.094,
+        "avg_return_pct": -0.326
+      }
+    ],
+    "LLY": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 618.497,
+        "avg_return_pct": 0.44
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 728.352,
+        "avg_return_pct": 0.805
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 757.583,
+        "avg_return_pct": 0.171
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 741.408,
+        "avg_return_pct": 0.035
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 771.739,
+        "avg_return_pct": 0.245
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 861.626,
+        "avg_return_pct": 0.524
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 871.591,
+        "avg_return_pct": -0.513
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 887.287,
+        "avg_return_pct": 0.855
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 904.607,
+        "avg_return_pct": -0.39
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 888.65,
+        "avg_return_pct": -0.271
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 774.317,
+        "avg_return_pct": -0.173
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 783.322,
+        "avg_return_pct": -0.131
+      }
+    ],
+    "MDT": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 79.988,
+        "avg_return_pct": 0.28
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 79.348,
+        "avg_return_pct": -0.239
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 78.89,
+        "avg_return_pct": 0.269
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 76.561,
+        "avg_return_pct": -0.368
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 77.685,
+        "avg_return_pct": 0.073
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 76.278,
+        "avg_return_pct": -0.123
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 74.386,
+        "avg_return_pct": 0.101
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 79.928,
+        "avg_return_pct": 0.451
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 84.945,
+        "avg_return_pct": 0.125
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 85.61,
+        "avg_return_pct": -0.033
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 83.176,
+        "avg_return_pct": -0.147
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 78.627,
+        "avg_return_pct": -0.337
+      }
+    ],
+    "MRK": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 110.458,
+        "avg_return_pct": 0.325
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 118.443,
+        "avg_return_pct": 0.264
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 116.077,
+        "avg_return_pct": 0.226
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 119.639,
+        "avg_return_pct": -0.091
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 120.963,
+        "avg_return_pct": -0.126
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 122.03,
+        "avg_return_pct": -0.032
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 118.126,
+        "avg_return_pct": -0.378
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 108.278,
+        "avg_return_pct": 0.213
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 109.779,
+        "avg_return_pct": -0.171
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 102.654,
+        "avg_return_pct": -0.446
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 94.9,
+        "avg_return_pct": -0.025
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 95.78,
+        "avg_return_pct": -0.057
+      }
+    ],
+    "MRNA": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 105.032,
+        "avg_return_pct": -0.511
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 93.133,
+        "avg_return_pct": -0.356
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 104.018,
+        "avg_return_pct": 0.768
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 105.606,
+        "avg_return_pct": 0.184
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 135.89,
+        "avg_return_pct": 1.296
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 139.979,
+        "avg_return_pct": -0.898
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 119.97,
+        "avg_return_pct": 0.035
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 83.569,
+        "avg_return_pct": -1.794
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 69.904,
+        "avg_return_pct": -0.657
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 56.802,
+        "avg_return_pct": -0.876
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 44.031,
+        "avg_return_pct": -1.049
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 41.515,
+        "avg_return_pct": -0.107
+      }
+    ],
+    "NBIX": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 136.408,
+        "avg_return_pct": 0.303
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 135.084,
+        "avg_return_pct": -0.33
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 138.23,
+        "avg_return_pct": 0.292
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 136.623,
+        "avg_return_pct": 0.0
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 139.7,
+        "avg_return_pct": -0.055
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 134.769,
+        "avg_return_pct": 0.104
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 144.018,
+        "avg_return_pct": 0.135
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 146.065,
+        "avg_return_pct": -0.371
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 119.599,
+        "avg_return_pct": -0.482
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 115.78,
+        "avg_return_pct": 0.204
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 123.918,
+        "avg_return_pct": 0.278
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 132.121,
+        "avg_return_pct": 0.365
+      }
+    ],
+    "NTLA": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 27.007,
+        "avg_return_pct": -1.237
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 27.759,
+        "avg_return_pct": 1.633
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 28.601,
+        "avg_return_pct": -0.735
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 23.203,
+        "avg_return_pct": -1.083
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 24.282,
+        "avg_return_pct": 0.058
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 23.966,
+        "avg_return_pct": 0.31
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 25.033,
+        "avg_return_pct": 0.767
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 22.787,
+        "avg_return_pct": -0.641
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 21.18,
+        "avg_return_pct": -0.394
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 18.182,
+        "avg_return_pct": -1.429
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 15.17,
+        "avg_return_pct": 0.555
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 13.202,
+        "avg_return_pct": -1.315
+      }
+    ],
+    "PFE": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 24.277,
+        "avg_return_pct": -0.386
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 23.566,
+        "avg_return_pct": -0.088
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 23.694,
+        "avg_return_pct": 0.232
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 22.631,
+        "avg_return_pct": -0.354
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 24.732,
+        "avg_return_pct": 0.598
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 24.627,
+        "avg_return_pct": -0.116
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 25.73,
+        "avg_return_pct": 0.473
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 25.77,
+        "avg_return_pct": -0.229
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 25.964,
+        "avg_return_pct": -0.004
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 25.72,
+        "avg_return_pct": -0.089
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 23.589,
+        "avg_return_pct": -0.291
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 23.423,
+        "avg_return_pct": 0.07
+      }
+    ],
+    "PODD": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 200.883,
+        "avg_return_pct": -0.43
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 187.604,
+        "avg_return_pct": -0.72
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 170.257,
+        "avg_return_pct": 0.25
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 169.135,
+        "avg_return_pct": 0.033
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 176.654,
+        "avg_return_pct": 0.197
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 197.126,
+        "avg_return_pct": 0.7
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 196.432,
+        "avg_return_pct": -0.161
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 192.555,
+        "avg_return_pct": 0.262
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 229.226,
+        "avg_return_pct": 0.7
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 232.448,
+        "avg_return_pct": -0.018
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 259.433,
+        "avg_return_pct": 0.74
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 265.86,
+        "avg_return_pct": -0.092
+      }
+    ],
+    "RARE": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 45.765,
+        "avg_return_pct": -0.414
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 47.45,
+        "avg_return_pct": 0.844
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 48.367,
+        "avg_return_pct": -0.49
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 45.947,
+        "avg_return_pct": -0.365
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 41.142,
+        "avg_return_pct": -0.246
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 40.737,
+        "avg_return_pct": 0.19
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 43.5,
+        "avg_return_pct": 0.432
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 52.96,
+        "avg_return_pct": 1.12
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 56.901,
+        "avg_return_pct": -0.097
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 54.474,
+        "avg_return_pct": -0.358
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 48.201,
+        "avg_return_pct": -0.308
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 45.63,
+        "avg_return_pct": -0.572
+      }
+    ],
+    "REGN": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 922.454,
+        "avg_return_pct": 0.209
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 948.948,
+        "avg_return_pct": 0.127
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 958.913,
+        "avg_return_pct": -0.017
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 908.586,
+        "avg_return_pct": -0.348
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 961.814,
+        "avg_return_pct": 0.443
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 1022.269,
+        "avg_return_pct": 0.371
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 1058.281,
+        "avg_return_pct": 0.127
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 1142.445,
+        "avg_return_pct": 0.434
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 1111.196,
+        "avg_return_pct": -0.581
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 971.175,
+        "avg_return_pct": -0.959
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 778.66,
+        "avg_return_pct": -0.544
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 731.437,
+        "avg_return_pct": -0.232
+      }
+    ],
+    "RMD": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 172.608,
+        "avg_return_pct": 0.542
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 179.443,
+        "avg_return_pct": -0.431
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 186.067,
+        "avg_return_pct": 0.671
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 185.439,
+        "avg_return_pct": 0.448
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 210.848,
+        "avg_return_pct": -0.146
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 200.861,
+        "avg_return_pct": -0.349
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 197.362,
+        "avg_return_pct": 0.518
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 221.32,
+        "avg_return_pct": 0.672
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 242.149,
+        "avg_return_pct": -0.005
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 236.157,
+        "avg_return_pct": -0.012
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 240.568,
+        "avg_return_pct": 0.156
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 235.077,
+        "avg_return_pct": -0.391
+      }
+    ],
+    "SRPT": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 113.36,
+        "avg_return_pct": 1.147
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 129.799,
+        "avg_return_pct": 0.404
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 124.784,
+        "avg_return_pct": 0.072
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 123.491,
+        "avg_return_pct": -0.083
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 129.395,
+        "avg_return_pct": 0.155
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 133.139,
+        "avg_return_pct": 1.272
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 148.729,
+        "avg_return_pct": -0.469
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 137.79,
+        "avg_return_pct": -0.181
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 127.205,
+        "avg_return_pct": -0.41
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 124.991,
+        "avg_return_pct": 0.052
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 118.149,
+        "avg_return_pct": 0.37
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 124.079,
+        "avg_return_pct": -0.425
+      }
+    ],
+    "SYK": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 302.937,
+        "avg_return_pct": 0.635
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 339.11,
+        "avg_return_pct": 0.203
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 347.621,
+        "avg_return_pct": 0.14
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 334.694,
+        "avg_return_pct": -0.274
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 325.835,
+        "avg_return_pct": 0.069
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 337.458,
+        "avg_return_pct": 0.003
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 329.442,
+        "avg_return_pct": -0.164
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 333.393,
+        "avg_return_pct": 0.447
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 357.416,
+        "avg_return_pct": 0.026
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 352.656,
+        "avg_return_pct": -0.053
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 376.605,
+        "avg_return_pct": 0.487
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 368.472,
+        "avg_return_pct": -0.389
+      }
+    ],
+    "TECH": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 71.072,
+        "avg_return_pct": -0.414
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 69.138,
+        "avg_return_pct": 0.253
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 71.766,
+        "avg_return_pct": -0.206
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 64.927,
+        "avg_return_pct": -0.473
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 78.9,
+        "avg_return_pct": 0.981
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 74.721,
+        "avg_return_pct": -0.385
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 75.326,
+        "avg_return_pct": 0.612
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 73.236,
+        "avg_return_pct": -0.398
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 74.53,
+        "avg_return_pct": 0.409
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 71.911,
+        "avg_return_pct": -0.323
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 72.656,
+        "avg_return_pct": 0.148
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 73.76,
+        "avg_return_pct": -0.2
+      }
+    ],
+    "TMO": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 540.361,
+        "avg_return_pct": -0.033
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 550.904,
+        "avg_return_pct": 0.287
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 581.061,
+        "avg_return_pct": 0.103
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 564.179,
+        "avg_return_pct": -0.087
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 578.059,
+        "avg_return_pct": -0.002
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 564.717,
+        "avg_return_pct": -0.133
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 555.119,
+        "avg_return_pct": 0.486
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 602.452,
+        "avg_return_pct": 0.019
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 610.025,
+        "avg_return_pct": 0.039
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 582.731,
+        "avg_return_pct": -0.533
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 529.618,
+        "avg_return_pct": -0.145
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 524.38,
+        "avg_return_pct": -0.076
+      }
+    ],
+    "UTHR": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 221.25,
+        "avg_return_pct": -0.279
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 217.342,
+        "avg_return_pct": 0.257
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 238.601,
+        "avg_return_pct": 0.112
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 234.641,
+        "avg_return_pct": 0.096
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 268.42,
+        "avg_return_pct": 0.754
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 295.086,
+        "avg_return_pct": 0.781
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 326.458,
+        "avg_return_pct": -0.056
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 337.885,
+        "avg_return_pct": 0.705
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 350.174,
+        "avg_return_pct": -0.064
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 358.667,
+        "avg_return_pct": 0.2
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 380.685,
+        "avg_return_pct": -0.023
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 364.811,
+        "avg_return_pct": -0.218
+      }
+    ],
+    "VRTX": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 428.746,
+        "avg_return_pct": 0.274
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 423.942,
+        "avg_return_pct": -0.14
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 415.234,
+        "avg_return_pct": -0.027
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 400.665,
+        "avg_return_pct": -0.278
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 431.278,
+        "avg_return_pct": 0.681
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 475.903,
+        "avg_return_pct": 0.159
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 488.144,
+        "avg_return_pct": 0.258
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 480.419,
+        "avg_return_pct": 0.011
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 471.751,
+        "avg_return_pct": -0.31
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 473.16,
+        "avg_return_pct": 0.111
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 476.084,
+        "avg_return_pct": -0.057
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 441.033,
+        "avg_return_pct": -0.672
+      }
+    ],
+    "ZBH": [
+      {
+        "period": "2024-01",
+        "avg_adj_close": 119.608,
+        "avg_return_pct": 0.175
+      },
+      {
+        "period": "2024-02",
+        "avg_adj_close": 123.009,
+        "avg_return_pct": -0.037
+      },
+      {
+        "period": "2024-03",
+        "avg_adj_close": 124.458,
+        "avg_return_pct": 0.313
+      },
+      {
+        "period": "2024-04",
+        "avg_adj_close": 121.71,
+        "avg_return_pct": -0.414
+      },
+      {
+        "period": "2024-05",
+        "avg_adj_close": 116.73,
+        "avg_return_pct": -0.192
+      },
+      {
+        "period": "2024-06",
+        "avg_adj_close": 107.383,
+        "avg_return_pct": -0.294
+      },
+      {
+        "period": "2024-07",
+        "avg_adj_close": 107.072,
+        "avg_return_pct": 0.124
+      },
+      {
+        "period": "2024-08",
+        "avg_adj_close": 109.208,
+        "avg_return_pct": 0.176
+      },
+      {
+        "period": "2024-09",
+        "avg_adj_close": 105.45,
+        "avg_return_pct": -0.302
+      },
+      {
+        "period": "2024-10",
+        "avg_adj_close": 103.099,
+        "avg_return_pct": -0.028
+      },
+      {
+        "period": "2024-11",
+        "avg_adj_close": 108.384,
+        "avg_return_pct": 0.244
+      },
+      {
+        "period": "2024-12",
+        "avg_adj_close": 106.079,
+        "avg_return_pct": -0.268
+      }
+    ]
+  },
+  "industry_summary": [
+    {
+      "industry": "Biotechnology",
+      "companies": 21,
+      "avg_rd_busd": 1.789,
+      "avg_volatility": 0.0281
+    },
+    {
+      "industry": "Diagnostics",
+      "companies": 2,
+      "avg_rd_busd": 0.11,
+      "avg_volatility": 0.014
+    },
+    {
+      "industry": "Life Sciences Tools",
+      "companies": 3,
+      "avg_rd_busd": 1.024,
+      "avg_volatility": 0.0166
+    },
+    {
+      "industry": "Medical Devices",
+      "companies": 11,
+      "avg_rd_busd": 1.214,
+      "avg_volatility": 0.0177
+    },
+    {
+      "industry": "Pharmaceuticals",
+      "companies": 6,
+      "avg_rd_busd": 10.29,
+      "avg_volatility": 0.0149
+    }
+  ],
+  "companies": [
+    {
+      "ticker": "PFE",
+      "company_name": "Pfizer Inc.",
+      "industry_group": "Pharmaceuticals",
+      "avg_close": 27.897,
+      "year_end_adj_close": 23.937,
+      "total_volume_b": 9.781,
+      "avg_daily_return": -0.0112,
+      "daily_return_volatility": 0.0146,
+      "latest_rd_expense_busd": 10.822,
+      "risk_level": "high_attention",
+      "risk_score": 1.4094,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "EDIT",
+      "company_name": "Editas Medicine, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 5.174,
+      "year_end_adj_close": 1.27,
+      "total_volume_b": 0.52,
+      "avg_daily_return": -0.7031,
+      "daily_return_volatility": 0.048,
+      "latest_rd_expense_busd": 0.199,
+      "risk_level": "high_attention",
+      "risk_score": 1.3576,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "FATE",
+      "company_name": "Fate Therapeutics, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 4.221,
+      "year_end_adj_close": 1.65,
+      "total_volume_b": 0.617,
+      "avg_daily_return": -0.1555,
+      "daily_return_volatility": 0.0582,
+      "latest_rd_expense_busd": 0.135,
+      "risk_level": "high_attention",
+      "risk_score": 1.1736,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "MRNA",
+      "company_name": "Moderna, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 91.492,
+      "year_end_adj_close": 41.58,
+      "total_volume_b": 1.295,
+      "avg_daily_return": -0.3256,
+      "daily_return_volatility": 0.0372,
+      "latest_rd_expense_busd": 4.543,
+      "risk_level": "high_attention",
+      "risk_score": 0.9697,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "MRK",
+      "company_name": "Merck & Co., Inc.",
+      "industry_group": "Pharmaceuticals",
+      "avg_close": 118.395,
+      "year_end_adj_close": 95.171,
+      "total_volume_b": 2.353,
+      "avg_daily_return": -0.0322,
+      "daily_return_volatility": 0.0131,
+      "latest_rd_expense_busd": 17.938,
+      "risk_level": "high_attention",
+      "risk_score": 0.7294,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "NTLA",
+      "company_name": "Intellia Therapeutics, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 22.495,
+      "year_end_adj_close": 11.66,
+      "total_volume_b": 0.452,
+      "avg_daily_return": -0.3105,
+      "daily_return_volatility": 0.0388,
+      "latest_rd_expense_busd": 0.466,
+      "risk_level": "high_attention",
+      "risk_score": 0.7046,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "BMY",
+      "company_name": "Bristol-Myers Squibb Company",
+      "industry_group": "Pharmaceuticals",
+      "avg_close": 49.621,
+      "year_end_adj_close": 52.709,
+      "total_volume_b": 3.528,
+      "avg_daily_return": 0.0631,
+      "daily_return_volatility": 0.0179,
+      "latest_rd_expense_busd": 11.159,
+      "risk_level": "high_attention",
+      "risk_score": 0.6265,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "BEAM",
+      "company_name": "Beam Therapeutics Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 26.725,
+      "year_end_adj_close": 24.8,
+      "total_volume_b": 0.307,
+      "avg_daily_return": 0.0625,
+      "daily_return_volatility": 0.0461,
+      "latest_rd_expense_busd": 0.368,
+      "risk_level": "high_attention",
+      "risk_score": 0.552,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "ARWR",
+      "company_name": "Arrowhead Pharmaceuticals, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 25.316,
+      "year_end_adj_close": 18.8,
+      "total_volume_b": 0.322,
+      "avg_daily_return": -0.1214,
+      "daily_return_volatility": 0.0399,
+      "latest_rd_expense_busd": 0.047,
+      "risk_level": "high_attention",
+      "risk_score": 0.5207,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "DXCM",
+      "company_name": "DexCom, Inc.",
+      "industry_group": "Medical Devices",
+      "avg_close": 101.692,
+      "year_end_adj_close": 77.77,
+      "total_volume_b": 0.973,
+      "avg_daily_return": -0.1105,
+      "daily_return_volatility": 0.0345,
+      "latest_rd_expense_busd": 0.552,
+      "risk_level": "high_attention",
+      "risk_score": 0.4236,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "CRSP",
+      "company_name": "CRISPR Therapeutics AG",
+      "industry_group": "Biotechnology",
+      "avg_close": 56.668,
+      "year_end_adj_close": 39.36,
+      "total_volume_b": 0.384,
+      "avg_daily_return": -0.1572,
+      "daily_return_volatility": 0.0314,
+      "latest_rd_expense_busd": 0.321,
+      "risk_level": "high_attention",
+      "risk_score": 0.3038,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "ABBV",
+      "company_name": "AbbVie Inc.",
+      "industry_group": "Pharmaceuticals",
+      "avg_close": 177.223,
+      "year_end_adj_close": 168.925,
+      "total_volume_b": 1.402,
+      "avg_daily_return": 0.0679,
+      "daily_return_volatility": 0.0149,
+      "latest_rd_expense_busd": 12.791,
+      "risk_level": "high_attention",
+      "risk_score": 0.2683,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "GILD",
+      "company_name": "Gilead Sciences, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 77.543,
+      "year_end_adj_close": 89.35,
+      "total_volume_b": 1.774,
+      "avg_daily_return": 0.0696,
+      "daily_return_volatility": 0.0156,
+      "latest_rd_expense_busd": 9.106,
+      "risk_level": "high_attention",
+      "risk_score": 0.1949,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "EW",
+      "company_name": "Edwards Lifesciences Corporation",
+      "industry_group": "Medical Devices",
+      "avg_close": 78.7,
+      "year_end_adj_close": 74.03,
+      "total_volume_b": 1.182,
+      "avg_daily_return": 0.0313,
+      "daily_return_volatility": 0.0263,
+      "latest_rd_expense_busd": 1.053,
+      "risk_level": "high_attention",
+      "risk_score": 0.0898,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "IONS",
+      "company_name": "Ionis Pharmaceuticals, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 43.101,
+      "year_end_adj_close": 34.96,
+      "total_volume_b": 0.34,
+      "avg_daily_return": -0.1385,
+      "daily_return_volatility": 0.0228,
+      "latest_rd_expense_busd": 0.638,
+      "risk_level": "high_attention",
+      "risk_score": 0.0312,
+      "cluster_id": "2"
+    },
+    {
+      "ticker": "RARE",
+      "company_name": "Ultragenyx Pharmaceutical Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 47.63,
+      "year_end_adj_close": 42.07,
+      "total_volume_b": 0.196,
+      "avg_daily_return": -0.0209,
+      "daily_return_volatility": 0.0258,
+      "latest_rd_expense_busd": 0.698,
+      "risk_level": "medium_attention",
+      "risk_score": -0.0047,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "SRPT",
+      "company_name": "Sarepta Therapeutics, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 128.001,
+      "year_end_adj_close": 121.59,
+      "total_volume_b": 0.302,
+      "avg_daily_return": 0.141,
+      "daily_return_volatility": 0.0321,
+      "latest_rd_expense_busd": 0.207,
+      "risk_level": "medium_attention",
+      "risk_score": -0.0147,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "ALNY",
+      "company_name": "Alnylam Pharmaceuticals, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 212.763,
+      "year_end_adj_close": 235.31,
+      "total_volume_b": 0.214,
+      "avg_daily_return": 0.1192,
+      "daily_return_volatility": 0.0312,
+      "latest_rd_expense_busd": 1.126,
+      "risk_level": "medium_attention",
+      "risk_score": -0.0499,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "AMGN",
+      "company_name": "Amgen Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 302.7,
+      "year_end_adj_close": 248.808,
+      "total_volume_b": 0.675,
+      "avg_daily_return": -0.0278,
+      "daily_return_volatility": 0.0161,
+      "latest_rd_expense_busd": 5.964,
+      "risk_level": "medium_attention",
+      "risk_score": -0.085,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "INCY",
+      "company_name": "Incyte Corporation",
+      "industry_group": "Biotechnology",
+      "avg_close": 62.98,
+      "year_end_adj_close": 69.07,
+      "total_volume_b": 0.584,
+      "avg_daily_return": 0.0389,
+      "daily_return_volatility": 0.0189,
+      "latest_rd_expense_busd": 2.607,
+      "risk_level": "medium_attention",
+      "risk_score": -0.1448,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "TECH",
+      "company_name": "Bio-Techne Corporation",
+      "industry_group": "Life Sciences Tools",
+      "avg_close": 73.453,
+      "year_end_adj_close": 71.394,
+      "total_volume_b": 0.251,
+      "avg_daily_return": 0.003,
+      "daily_return_volatility": 0.0232,
+      "latest_rd_expense_busd": 0.097,
+      "risk_level": "medium_attention",
+      "risk_score": -0.1472,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "BIIB",
+      "company_name": "Biogen Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 206.992,
+      "year_end_adj_close": 152.92,
+      "total_volume_b": 0.306,
+      "avg_daily_return": -0.2102,
+      "daily_return_volatility": 0.0159,
+      "latest_rd_expense_busd": 1.335,
+      "risk_level": "medium_attention",
+      "risk_score": -0.1511,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "HALO",
+      "company_name": "Halozyme Therapeutics, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 47.621,
+      "year_end_adj_close": 47.81,
+      "total_volume_b": 0.344,
+      "avg_daily_return": 0.1312,
+      "daily_return_volatility": 0.0258,
+      "latest_rd_expense_busd": 0.079,
+      "risk_level": "medium_attention",
+      "risk_score": -0.1634,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "MDT",
+      "company_name": "Medtronic plc",
+      "industry_group": "Medical Devices",
+      "avg_close": 84.504,
+      "year_end_adj_close": 76.81,
+      "total_volume_b": 1.57,
+      "avg_daily_return": 0.0049,
+      "daily_return_volatility": 0.011,
+      "latest_rd_expense_busd": 2.735,
+      "risk_level": "medium_attention",
+      "risk_score": -0.2248,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "ABT",
+      "company_name": "Abbott Laboratories",
+      "industry_group": "Medical Devices",
+      "avg_close": 111.461,
+      "year_end_adj_close": 109.759,
+      "total_volume_b": 1.41,
+      "avg_daily_return": 0.0259,
+      "daily_return_volatility": 0.0113,
+      "latest_rd_expense_busd": 2.844,
+      "risk_level": "medium_attention",
+      "risk_score": -0.2685,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "NBIX",
+      "company_name": "Neurocrine Biosciences, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 133.572,
+      "year_end_adj_close": 136.5,
+      "total_volume_b": 0.222,
+      "avg_daily_return": 0.0365,
+      "daily_return_volatility": 0.0207,
+      "latest_rd_expense_busd": 0.161,
+      "risk_level": "medium_attention",
+      "risk_score": -0.2914,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "JNJ",
+      "company_name": "Johnson & Johnson",
+      "industry_group": "Pharmaceuticals",
+      "avg_close": 155.53,
+      "year_end_adj_close": 138.784,
+      "total_volume_b": 1.806,
+      "avg_daily_return": -0.0233,
+      "daily_return_volatility": 0.0095,
+      "latest_rd_expense_busd": 1.841,
+      "risk_level": "medium_attention",
+      "risk_score": -0.2944,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "EXEL",
+      "company_name": "Exelixis, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 25.478,
+      "year_end_adj_close": 33.3,
+      "total_volume_b": 0.52,
+      "avg_daily_return": 0.1504,
+      "daily_return_volatility": 0.0196,
+      "latest_rd_expense_busd": 0.91,
+      "risk_level": "medium_attention",
+      "risk_score": -0.2982,
+      "cluster_id": "1"
+    },
+    {
+      "ticker": "RMD",
+      "company_name": "ResMed Inc.",
+      "industry_group": "Medical Devices",
+      "avg_close": 212.981,
+      "year_end_adj_close": 225.476,
+      "total_volume_b": 0.255,
+      "avg_daily_return": 0.145,
+      "daily_return_volatility": 0.0236,
+      "latest_rd_expense_busd": 0.308,
+      "risk_level": "low_attention",
+      "risk_score": -0.3391,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "LLY",
+      "company_name": "Eli Lilly and Company",
+      "industry_group": "Pharmaceuticals",
+      "avg_close": 810.866,
+      "year_end_adj_close": 763.693,
+      "total_volume_b": 0.809,
+      "avg_daily_return": 0.1263,
+      "daily_return_volatility": 0.0191,
+      "latest_rd_expense_busd": 7.191,
+      "risk_level": "low_attention",
+      "risk_score": -0.3396,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "PODD",
+      "company_name": "Insulet Corporation",
+      "industry_group": "Medical Devices",
+      "avg_close": 206.305,
+      "year_end_adj_close": 261.07,
+      "total_volume_b": 0.19,
+      "avg_daily_return": 0.1156,
+      "daily_return_volatility": 0.0233,
+      "latest_rd_expense_busd": 0.22,
+      "risk_level": "low_attention",
+      "risk_score": -0.3542,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "DHR",
+      "company_name": "Danaher Corporation",
+      "industry_group": "Life Sciences Tools",
+      "avg_close": 251.858,
+      "year_end_adj_close": 227.632,
+      "total_volume_b": 0.707,
+      "avg_daily_return": 0.0024,
+      "daily_return_volatility": 0.014,
+      "latest_rd_expense_busd": 1.584,
+      "risk_level": "low_attention",
+      "risk_score": -0.3828,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "ZBH",
+      "company_name": "Zimmer Biomet Holdings, Inc.",
+      "industry_group": "Medical Devices",
+      "avg_close": 114.675,
+      "year_end_adj_close": 104.314,
+      "total_volume_b": 0.377,
+      "avg_daily_return": -0.0429,
+      "daily_return_volatility": 0.0135,
+      "latest_rd_expense_busd": 0.226,
+      "risk_level": "low_attention",
+      "risk_score": -0.4013,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "VRTX",
+      "company_name": "Vertex Pharmaceuticals Incorporated",
+      "industry_group": "Biotechnology",
+      "avg_close": 450.562,
+      "year_end_adj_close": 402.7,
+      "total_volume_b": 0.313,
+      "avg_daily_return": 0.0041,
+      "daily_return_volatility": 0.0155,
+      "latest_rd_expense_busd": 3.051,
+      "risk_level": "low_attention",
+      "risk_score": -0.4127,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "IDXX",
+      "company_name": "IDEXX Laboratories, Inc.",
+      "industry_group": "Diagnostics",
+      "avg_close": 492.568,
+      "year_end_adj_close": 413.44,
+      "total_volume_b": 0.129,
+      "avg_daily_return": -0.0974,
+      "daily_return_volatility": 0.0171,
+      "latest_rd_expense_busd": 0.22,
+      "risk_level": "low_attention",
+      "risk_score": -0.4402,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "BDX",
+      "company_name": "Becton, Dickinson and Company",
+      "industry_group": "Medical Devices",
+      "avg_close": 184.756,
+      "year_end_adj_close": 173.472,
+      "total_volume_b": 0.476,
+      "avg_daily_return": -0.0179,
+      "daily_return_volatility": 0.0116,
+      "latest_rd_expense_busd": 1.19,
+      "risk_level": "low_attention",
+      "risk_score": -0.4582,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "REGN",
+      "company_name": "Regeneron Pharmaceuticals, Inc.",
+      "industry_group": "Biotechnology",
+      "avg_close": 968.293,
+      "year_end_adj_close": 706.495,
+      "total_volume_b": 0.143,
+      "avg_daily_return": -0.0859,
+      "daily_return_volatility": 0.0137,
+      "latest_rd_expense_busd": 5.132,
+      "risk_level": "low_attention",
+      "risk_score": -0.4683,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "BSX",
+      "company_name": "Boston Scientific Corporation",
+      "industry_group": "Medical Devices",
+      "avg_close": 76.24,
+      "year_end_adj_close": 89.32,
+      "total_volume_b": 1.495,
+      "avg_daily_return": 0.1788,
+      "daily_return_volatility": 0.0105,
+      "latest_rd_expense_busd": 1.615,
+      "risk_level": "low_attention",
+      "risk_score": -0.4744,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "HOLX",
+      "company_name": "Hologic, Inc.",
+      "industry_group": "Diagnostics",
+      "avg_close": 76.902,
+      "year_end_adj_close": 72.09,
+      "total_volume_b": 0.421,
+      "avg_daily_return": 0.0039,
+      "daily_return_volatility": 0.0109,
+      "latest_rd_expense_busd": 0.0,
+      "risk_level": "low_attention",
+      "risk_score": -0.5119,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "TMO",
+      "company_name": "Thermo Fisher Scientific Inc.",
+      "industry_group": "Life Sciences Tools",
+      "avg_close": 569.022,
+      "year_end_adj_close": 517.885,
+      "total_volume_b": 0.389,
+      "avg_daily_return": -0.009,
+      "daily_return_volatility": 0.0126,
+      "latest_rd_expense_busd": 1.39,
+      "risk_level": "low_attention",
+      "risk_score": -0.6264,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "UTHR",
+      "company_name": "United Therapeutics Corporation",
+      "industry_group": "Biotechnology",
+      "avg_close": 299.929,
+      "year_end_adj_close": 352.84,
+      "total_volume_b": 0.112,
+      "avg_daily_return": 0.1907,
+      "daily_return_volatility": 0.0177,
+      "latest_rd_expense_busd": 0.481,
+      "risk_level": "low_attention",
+      "risk_score": -0.6466,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "SYK",
+      "company_name": "Stryker Corporation",
+      "industry_group": "Medical Devices",
+      "avg_close": 347.892,
+      "year_end_adj_close": 355.788,
+      "total_volume_b": 0.317,
+      "avg_daily_return": 0.0884,
+      "daily_return_volatility": 0.0118,
+      "latest_rd_expense_busd": 1.466,
+      "risk_level": "low_attention",
+      "risk_score": -0.6575,
+      "cluster_id": "0"
+    },
+    {
+      "ticker": "ISRG",
+      "company_name": "Intuitive Surgical, Inc.",
+      "industry_group": "Medical Devices",
+      "avg_close": 441.555,
+      "year_end_adj_close": 521.96,
+      "total_volume_b": 0.363,
+      "avg_daily_return": 0.1954,
+      "daily_return_volatility": 0.0168,
+      "latest_rd_expense_busd": 1.145,
+      "risk_level": "low_attention",
+      "risk_score": -0.7041,
+      "cluster_id": "0"
+    }
+  ],
+  "anomalies": [
+    {
+      "ticker": "DXCM_volume",
+      "period": "2024-07-26",
+      "value": 53914100.0,
+      "z_score": 12.778,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "BMY_volume",
+      "period": "2024-03-15",
+      "value": 123585300.0,
+      "z_score": 12.094,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "EW",
+      "period": "2024-07-25",
+      "value": -31.34,
+      "z_score": -11.965,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "DXCM",
+      "period": "2024-07-26",
+      "value": -40.658,
+      "z_score": -11.765,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "EW_volume",
+      "period": "2024-07-25",
+      "value": 45982100.0,
+      "z_score": 11.486,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "IONS_volume",
+      "period": "2024-09-10",
+      "value": 11521900.0,
+      "z_score": 11.243,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ALNY",
+      "period": "2024-06-24",
+      "value": 34.52,
+      "z_score": 11.04,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "SRPT_volume",
+      "period": "2024-05-31",
+      "value": 16976000.0,
+      "z_score": 10.764,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "FATE_volume",
+      "period": "2024-11-18",
+      "value": 24737200.0,
+      "z_score": 10.537,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ALNY_volume",
+      "period": "2024-06-24",
+      "value": 9193800.0,
+      "z_score": 10.255,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "VRTX_volume",
+      "period": "2024-12-19",
+      "value": 8207400.0,
+      "z_score": 9.515,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "NTLA_volume",
+      "period": "2024-10-24",
+      "value": 11379700.0,
+      "z_score": 9.401,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "SRPT",
+      "period": "2024-06-21",
+      "value": 30.138,
+      "z_score": 9.355,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "NBIX",
+      "period": "2024-08-28",
+      "value": -18.873,
+      "z_score": -9.145,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "HOLX_volume",
+      "period": "2024-12-20",
+      "value": 8613766.0,
+      "z_score": 9.08,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "SRPT_volume",
+      "period": "2024-06-21",
+      "value": 14382400.0,
+      "z_score": 8.995,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "NBIX_volume",
+      "period": "2024-08-28",
+      "value": 4827600.0,
+      "z_score": 8.671,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "MRK_volume",
+      "period": "2024-06-28",
+      "value": 57055500.0,
+      "z_score": 8.512,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ABBV",
+      "period": "2024-11-11",
+      "value": -12.566,
+      "z_score": -8.493,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "MDT_volume",
+      "period": "2024-09-20",
+      "value": 25452900.0,
+      "z_score": 8.477,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "AMGN_volume",
+      "period": "2024-11-26",
+      "value": 17010300.0,
+      "z_score": 8.463,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "LLY_volume",
+      "period": "2024-10-30",
+      "value": 18257200.0,
+      "z_score": 8.43,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "BEAM_volume",
+      "period": "2024-02-27",
+      "value": 7426800.0,
+      "z_score": 8.03,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "RMD",
+      "period": "2024-04-26",
+      "value": 18.886,
+      "z_score": 7.942,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "TECH_volume",
+      "period": "2024-06-28",
+      "value": 4737500.0,
+      "z_score": 7.838,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "MRNA_volume",
+      "period": "2024-12-20",
+      "value": 35482900.0,
+      "z_score": 7.792,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "RARE_volume",
+      "period": "2024-06-14",
+      "value": 4107700.0,
+      "z_score": 7.785,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "BIIB_volume",
+      "period": "2024-12-20",
+      "value": 5776200.0,
+      "z_score": 7.656,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "EDIT_volume",
+      "period": "2024-12-13",
+      "value": 10559600.0,
+      "z_score": 7.48,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "MRK",
+      "period": "2024-07-30",
+      "value": -9.806,
+      "z_score": -7.458,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "VRTX",
+      "period": "2024-12-19",
+      "value": -11.365,
+      "z_score": -7.367,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "AMGN",
+      "period": "2024-05-03",
+      "value": 11.818,
+      "z_score": 7.36,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "GILD_volume",
+      "period": "2024-06-21",
+      "value": 31120000.0,
+      "z_score": 7.148,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ARWR_volume",
+      "period": "2024-11-26",
+      "value": 8052200.0,
+      "z_score": 7.09,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "HALO_volume",
+      "period": "2024-11-15",
+      "value": 7231200.0,
+      "z_score": 7.026,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "TECH",
+      "period": "2024-05-01",
+      "value": 16.216,
+      "z_score": 7.002,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "TMO_volume",
+      "period": "2024-06-28",
+      "value": 6150900.0,
+      "z_score": 6.927,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "SYK_volume",
+      "period": "2024-01-31",
+      "value": 4931900.0,
+      "z_score": 6.885,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ABBV_volume",
+      "period": "2024-06-28",
+      "value": 24463400.0,
+      "z_score": 6.862,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ABT_volume",
+      "period": "2024-03-15",
+      "value": 22415700.0,
+      "z_score": 6.855,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "VRTX_volume",
+      "period": "2024-12-20",
+      "value": 6203100.0,
+      "z_score": 6.777,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "IDXX_volume",
+      "period": "2024-10-31",
+      "value": 2006400.0,
+      "z_score": 6.73,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "REGN",
+      "period": "2024-10-31",
+      "value": -9.167,
+      "z_score": -6.66,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "MRK_volume",
+      "period": "2024-03-15",
+      "value": 46477400.0,
+      "z_score": 6.625,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "EXEL",
+      "period": "2024-08-07",
+      "value": 13.092,
+      "z_score": 6.601,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "GILD",
+      "period": "2024-01-22",
+      "value": -10.15,
+      "z_score": -6.579,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "EXEL",
+      "period": "2024-10-30",
+      "value": 12.913,
+      "z_score": 6.51,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "AMGN_volume",
+      "period": "2024-12-20",
+      "value": 13687600.0,
+      "z_score": 6.501,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ZBH",
+      "period": "2024-09-05",
+      "value": -8.744,
+      "z_score": -6.481,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "UTHR_volume",
+      "period": "2024-06-21",
+      "value": 1800900.0,
+      "z_score": 6.397,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "INCY",
+      "period": "2024-10-29",
+      "value": 12.041,
+      "z_score": 6.38,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "BMY",
+      "period": "2024-07-26",
+      "value": 11.442,
+      "z_score": 6.358,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "REGN_volume",
+      "period": "2024-10-31",
+      "value": 2291400.0,
+      "z_score": 6.212,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "PODD_volume",
+      "period": "2024-05-10",
+      "value": 3176400.0,
+      "z_score": 6.209,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "EDIT_volume",
+      "period": "2024-06-21",
+      "value": 9039400.0,
+      "z_score": 6.142,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "CRSP_volume",
+      "period": "2024-02-15",
+      "value": 6010000.0,
+      "z_score": 6.129,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ARWR",
+      "period": "2024-11-27",
+      "value": 24.228,
+      "z_score": 6.12,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "HALO",
+      "period": "2024-11-15",
+      "value": -15.4,
+      "z_score": -6.041,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "ISRG",
+      "period": "2024-01-10",
+      "value": 10.252,
+      "z_score": 6.0,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ISRG",
+      "period": "2024-10-18",
+      "value": 10.01,
+      "z_score": 5.856,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "BMY",
+      "period": "2024-11-11",
+      "value": 10.491,
+      "z_score": 5.827,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "BSX_volume",
+      "period": "2024-10-23",
+      "value": 19619300.0,
+      "z_score": 5.799,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "EXEL_volume",
+      "period": "2024-10-15",
+      "value": 8475500.0,
+      "z_score": 5.756,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "IDXX",
+      "period": "2024-10-31",
+      "value": -9.79,
+      "z_score": -5.692,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "ARWR_volume",
+      "period": "2024-11-27",
+      "value": 6692900.0,
+      "z_score": 5.667,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "RARE_volume",
+      "period": "2024-01-19",
+      "value": 3197900.0,
+      "z_score": 5.658,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "PFE_volume",
+      "period": "2024-11-15",
+      "value": 131074400.0,
+      "z_score": 5.65,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ABT_volume",
+      "period": "2024-07-29",
+      "value": 19452700.0,
+      "z_score": 5.647,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ALNY_volume",
+      "period": "2024-02-15",
+      "value": 5429600.0,
+      "z_score": 5.628,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "BEAM",
+      "period": "2024-02-27",
+      "value": 25.894,
+      "z_score": 5.618,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "RMD_volume",
+      "period": "2024-04-26",
+      "value": 4330800.0,
+      "z_score": 5.605,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ABBV_volume",
+      "period": "2024-03-15",
+      "value": 20957800.0,
+      "z_score": 5.589,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "MRNA",
+      "period": "2024-08-01",
+      "value": -21.012,
+      "z_score": -5.567,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "RARE",
+      "period": "2024-08-02",
+      "value": 14.315,
+      "z_score": 5.563,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ABBV_volume",
+      "period": "2024-11-11",
+      "value": 20760300.0,
+      "z_score": 5.518,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "ISRG",
+      "period": "2024-07-19",
+      "value": 9.341,
+      "z_score": 5.456,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "HOLX",
+      "period": "2024-11-05",
+      "value": -5.877,
+      "z_score": -5.404,
+      "anomaly_type": "low_value"
+    },
+    {
+      "ticker": "GILD",
+      "period": "2024-06-20",
+      "value": 8.456,
+      "z_score": 5.399,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "DHR_volume",
+      "period": "2024-09-20",
+      "value": 9267300.0,
+      "z_score": 5.386,
+      "anomaly_type": "high_value"
+    },
+    {
+      "ticker": "EDIT",
+      "period": "2024-02-28",
+      "value": 24.944,
+      "z_score": 5.358,
+      "anomaly_type": "high_value"
+    }
+  ],
+  "correlations": [
+    {
+      "x": "avg_close",
+      "y": "year_end_adj_close",
+      "value": 0.977,
+      "strength": "strong",
+      "direction": "positive",
+      "sample_size": 43
+    },
+    {
+      "x": "avg_close",
+      "y": "total_volume",
+      "value": -0.209,
+      "strength": "weak",
+      "direction": "negative",
+      "sample_size": 43
+    },
+    {
+      "x": "avg_close",
+      "y": "avg_daily_return",
+      "value": 0.191,
+      "strength": "very_weak",
+      "direction": "positive",
+      "sample_size": 43
+    },
+    {
+      "x": "avg_close",
+      "y": "daily_return_volatility",
+      "value": -0.369,
+      "strength": "weak",
+      "direction": "negative",
+      "sample_size": 43
+    },
+    {
+      "x": "avg_close",
+      "y": "latest_rd_expense_busd",
+      "value": 0.092,
+      "strength": "very_weak",
+      "direction": "positive",
+      "sample_size": 42
+    },
+    {
+      "x": "year_end_adj_close",
+      "y": "total_volume",
+      "value": -0.222,
+      "strength": "weak",
+      "direction": "negative",
+      "sample_size": 43
+    },
+    {
+      "x": "year_end_adj_close",
+      "y": "avg_daily_return",
+      "value": 0.297,
+      "strength": "weak",
+      "direction": "positive",
+      "sample_size": 43
+    },
+    {
+      "x": "year_end_adj_close",
+      "y": "daily_return_volatility",
+      "value": -0.387,
+      "strength": "weak",
+      "direction": "negative",
+      "sample_size": 43
+    },
+    {
+      "x": "year_end_adj_close",
+      "y": "latest_rd_expense_busd",
+      "value": 0.061,
+      "strength": "very_weak",
+      "direction": "positive",
+      "sample_size": 42
+    },
+    {
+      "x": "total_volume",
+      "y": "avg_daily_return",
+      "value": 0.022,
+      "strength": "very_weak",
+      "direction": "positive",
+      "sample_size": 43
+    },
+    {
+      "x": "total_volume",
+      "y": "daily_return_volatility",
+      "value": -0.194,
+      "strength": "very_weak",
+      "direction": "negative",
+      "sample_size": 43
+    },
+    {
+      "x": "total_volume",
+      "y": "latest_rd_expense_busd",
+      "value": 0.584,
+      "strength": "moderate",
+      "direction": "positive",
+      "sample_size": 42
+    },
+    {
+      "x": "avg_daily_return",
+      "y": "daily_return_volatility",
+      "value": -0.48,
+      "strength": "moderate",
+      "direction": "negative",
+      "sample_size": 43
+    },
+    {
+      "x": "avg_daily_return",
+      "y": "latest_rd_expense_busd",
+      "value": 0.09,
+      "strength": "very_weak",
+      "direction": "positive",
+      "sample_size": 42
+    },
+    {
+      "x": "daily_return_volatility",
+      "y": "latest_rd_expense_busd",
+      "value": -0.344,
+      "strength": "weak",
+      "direction": "negative",
+      "sample_size": 42
+    }
+  ],
+  "keywords": [
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Bio",
+      "category": "company_name",
+      "occurrences": "25",
+      "document_count": "23",
+      "attention_label": "risk_attention",
+      "explanation": "公司名称中的生物相关关键词，提示创新研发关注"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Biotechnology",
+      "category": "industry",
+      "occurrences": "21",
+      "document_count": "21",
+      "attention_label": "risk_attention",
+      "explanation": "生物技术行业分组，通常研发投入和市场波动关注度较高"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Diagnostics",
+      "category": "industry",
+      "occurrences": "2",
+      "document_count": "2",
+      "attention_label": "regular_monitoring",
+      "explanation": "诊断行业分组，用于常规行业对比"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Life Sciences Tools",
+      "category": "industry",
+      "occurrences": "3",
+      "document_count": "3",
+      "attention_label": "regular_monitoring",
+      "explanation": "生命科学工具行业分组，用于常规行业对比"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Medical",
+      "category": "company_name",
+      "occurrences": "11",
+      "document_count": "11",
+      "attention_label": "regular_monitoring",
+      "explanation": "公司名称中的医疗相关关键词"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Medical Devices",
+      "category": "industry",
+      "occurrences": "11",
+      "document_count": "11",
+      "attention_label": "regular_monitoring",
+      "explanation": "医疗器械行业分组，用于常规行业对比"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Pharmaceuticals",
+      "category": "company_name",
+      "occurrences": "11",
+      "document_count": "11",
+      "attention_label": "regular_monitoring",
+      "explanation": "公司名称中的制药相关关键词"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Pharmaceuticals",
+      "category": "industry",
+      "occurrences": "11",
+      "document_count": "11",
+      "attention_label": "regular_monitoring",
+      "explanation": "制药行业分组，用于常规行业对比"
+    },
+    {
+      "source_table": "company_2024_features",
+      "keyword": "Therapeutics",
+      "category": "company_name",
+      "occurrences": "7",
+      "document_count": "7",
+      "attention_label": "risk_attention",
+      "explanation": "公司名称中的治疗相关关键词，提示研发型业务关注"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>医药健康公司研发投入与市场风险 Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">数据可视化 Skill 复用测试</p>
+        <h1>医药健康公司研发投入与市场风险 Dashboard</h1>
+      </div>
+      <button id="resetBtn" class="icon-button" title="重置筛选">↺</button>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="筛选器">
+        <label>
+          股票
+          <select id="tickerSelect"></select>
+        </label>
+        <label>
+          行业
+          <select id="industrySelect"></select>
+        </label>
+        <label>
+          指标
+          <select id="metricSelect">
+            <option value="avg_adj_close">月均调整收盘价</option>
+            <option value="avg_return_pct">月均收益率(%)</option>
+            <option value="total_volume_b">月成交量(十亿股)</option>
+          </select>
+        </label>
+        <label>
+          起始月份
+          <select id="startMonth"></select>
+        </label>
+        <label>
+          结束月份
+          <select id="endMonth"></select>
+        </label>
+        <div class="segmented" aria-label="时间窗口">
+          <button data-window="all" class="active">全量</button>
+          <button data-window="6">近 6 月</button>
+          <button data-window="3">近 3 月</button>
+        </div>
+      </section>
+
+      <section class="kpis" aria-label="关键指标">
+        <article><span>公司数量</span><strong id="kpiCompanies">-</strong></article>
+        <article><span>日行情记录</span><strong id="kpiRows">-</strong></article>
+        <article><span>高关注公司</span><strong id="kpiRisk">-</strong></article>
+        <article><span>异常候选</span><strong id="kpiAnomalies">-</strong></article>
+      </section>
+
+      <section class="grid">
+        <article class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>月度趋势</h2>
+              <p id="trendSubtitle">筛选后指标随月份变化</p>
+            </div>
+          </div>
+          <svg id="trendChart" class="chart" role="img" aria-label="月度趋势折线图"></svg>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>行业对比</h2>
+              <p>公司数、平均研发投入与平均波动率</p>
+            </div>
+          </div>
+          <svg id="industryChart" class="chart" role="img" aria-label="行业柱状图"></svg>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>风险构成</h2>
+              <p>聚类风险等级分布</p>
+            </div>
+          </div>
+          <svg id="donutChart" class="chart" role="img" aria-label="风险构成环图"></svg>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <div>
+              <h2>研发投入与波动率</h2>
+              <p>点大小代表年度成交量，颜色代表风险等级</p>
+            </div>
+          </div>
+          <svg id="scatterChart" class="chart" role="img" aria-label="研发投入与波动率散点图"></svg>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>相关性热力图</h2>
+              <p>来自上一阶段 correlation_matrix.csv</p>
+            </div>
+          </div>
+          <svg id="heatmapChart" class="chart" role="img" aria-label="相关性热力图"></svg>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>异常候选</h2>
+              <p>按 z-score 绝对值排序</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>股票</th><th>日期</th><th>收益率</th><th>z-score</th><th>类型</th></tr>
+              </thead>
+              <tbody id="anomalyTable"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+    <div id="tooltip" class="tooltip"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
