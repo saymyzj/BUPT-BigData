@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数据采集</title>
+  <style>
+:root { color-scheme: light; --bg:#f7f7f4; --ink:#202124; --muted:#64645f; --line:#deded7; --panel:#ffffff; --user:#e8f1ff; --assistant:#ffffff; --tool:#f2efe7; --accent:#276b5d; --fail:#a43b32; --ok:#2f7d4f; }
+* { box-sizing: border-box; }
+body { margin:0; font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); }
+.top { display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; padding:32px clamp(18px,4vw,56px); border-bottom:1px solid var(--line); background:#fbfbf8; }
+.eyebrow { color:var(--accent); font-weight:700; margin:0 0 8px; }
+h1 { margin:0; font-size:clamp(28px,4vw,44px); letter-spacing:0; }
+h2 { margin:0 0 18px; font-size:22px; }
+.sub { color:var(--muted); max-width:760px; }
+.meta-grid, .stats { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:10px; }
+.meta-grid div, .stats div { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px; }
+.meta-grid .wide { grid-column:1 / -1; }
+span { color:var(--muted); }
+strong { display:block; font-size:18px; margin-top:2px; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+main { max-width:1120px; margin:0 auto; padding:22px clamp(14px,3vw,28px) 56px; }
+.toolbar { position:sticky; top:0; z-index:2; display:flex; flex-wrap:wrap; gap:8px; padding:12px 0; background:var(--bg); }
+button { border:1px solid var(--line); background:#fff; color:var(--ink); border-radius:8px; padding:8px 12px; cursor:pointer; }
+button.active { background:var(--accent); color:white; border-color:var(--accent); }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:22px; margin:16px 0; }
+.note { background:#f6f1df; border-left:4px solid #b89134; padding:12px 14px; border-radius:6px; }
+.timeline { display:flex; flex-direction:column; gap:14px; }
+.event { display:grid; grid-template-columns:42px minmax(0,1fr); gap:12px; }
+.event[hidden] { display:none; }
+.avatar { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-weight:800; color:white; background:var(--accent); }
+.assistant .avatar { background:#5c6570; }
+.tool .avatar { background:#9a7a37; }
+.bubble { border:1px solid var(--line); border-radius:8px; background:var(--assistant); padding:14px; min-width:0; }
+.user .bubble { background:var(--user); }
+.tool .bubble { background:var(--tool); }
+.event-head { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:8px; font-weight:700; }
+time { color:var(--muted); font-size:13px; font-weight:400; margin-left:auto; }
+.result { border-radius:999px; padding:2px 8px; font-size:12px; font-weight:700; }
+.result.ok { background:#dff1e6; color:var(--ok); }
+.result.fail { background:#f6dedb; color:var(--fail); }
+p { margin:0 0 10px; }
+.text h3, .text h4 { margin:10px 0 6px; line-height:1.35; letter-spacing:0; }
+.text h3 { font-size:17px; }
+.text h4 { font-size:15px; color:var(--ink); }
+.text ul, .text ol { margin:6px 0 10px; padding-left:24px; }
+.text li { margin:3px 0; }
+.text blockquote { margin:8px 0 10px; padding:8px 12px; border-left:3px solid var(--line); color:var(--muted); background:#fafaf7; border-radius:6px; }
+.text a { color:var(--accent); font-weight:700; }
+.text p:last-child, .text ul:last-child, .text ol:last-child, .text blockquote:last-child { margin-bottom:0; }
+pre { overflow:auto; background:#202124; color:#f4f4f4; border-radius:8px; padding:12px; max-height:520px; }
+.cmd { background:#111; }
+details { margin-top:10px; }
+summary { cursor:pointer; color:var(--accent); font-weight:700; }
+.files { margin:8px 0; padding-left:22px; }
+figure { margin:12px 0 0; }
+img { max-width:100%; border:1px solid var(--line); border-radius:8px; }
+figcaption, .asset-missing { color:var(--muted); font-size:13px; }
+.audit { display:grid; grid-template-columns:160px minmax(0,1fr); gap:8px 14px; }
+.audit dt { color:var(--muted); }
+.audit dd { margin:0; min-width:0; overflow-wrap:anywhere; }
+@media (max-width: 760px) { .top { grid-template-columns:1fr; } .meta-grid,.stats { grid-template-columns:1fr; } .event { grid-template-columns:1fr; } .avatar { display:none; } .audit { grid-template-columns:1fr; } }
+ table{width:100%;border-collapse:collapse}td,th{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}a{color:var(--accent);font-weight:700}</style>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="eyebrow">Codex Session Export</p>
+      <h1>数据采集</h1>
+      <p class="sub">本页汇总多个 Codex 会话导出结果。每个子报告都保留独立的 HTML、Markdown、redacted JSONL 与 manifest。</p>
+    </div>
+    <div class="meta-grid">
+      <div><span>课程</span><strong>大数据</strong></div>
+      <div><span>会话数</span><strong>2</strong></div>
+      <div class="wide"><span>生成时间</span><strong>2026-06-05T23:02:31+08:00</strong></div>
+    </div>
+  </header>
+  <main>
+    <section class="panel">
+      <h2>批量摘要</h2>
+      <div class="stats"><div><span>总事件</span><strong>400</strong></div>
+<div><span>用户提示词</span><strong>20</strong></div>
+<div><span>AI 回复</span><strong>149</strong></div>
+<div><span>工具调用</span><strong>224</strong></div>
+<div><span>终端命令</span><strong>149</strong></div>
+<div><span>文件读取</span><strong>56</strong></div>
+<div><span>文件修改</span><strong>29</strong></div>
+<div><span>验证运行</span><strong>4</strong></div>
+<div><span>失败命令</span><strong>5</strong></div>
+<div><span>图片</span><strong>2</strong></div></div>
+    </section>
+    <section class="panel">
+      <h2>会话列表</h2>
+      <table>
+        <thead><tr><th>会话 ID</th><th>开始时间</th><th>来源</th><th>工作目录</th><th>报告</th></tr></thead>
+        <tbody>
+            <tr>
+              <td><code>019e69c8-3ab6-74b3-a363-a10e93914b5a</code></td>
+              <td>2026-05-27T14:13:10.482Z</td>
+              <td>Codex Desktop</td>
+              <td><code>/Users/zhoujia/code/大数据期末实验/大模型助力大数据分析</code></td>
+              <td><a href="019e69c8-3ab6-74b3-a363-a10e93914b5a/report.html">打开报告</a></td>
+            </tr>
+            
+            <tr>
+              <td><code>019e6aad-18c3-76f1-bbb0-364554ef4b2f</code></td>
+              <td>2026-05-27T18:23:09.529Z</td>
+              <td>Codex Desktop</td>
+              <td><code>/Users/zhoujia/code/大数据期末实验/大模型助力大数据分析</code></td>
+              <td><a href="019e6aad-18c3-76f1-bbb0-364554ef4b2f/report.html">打开报告</a></td>
+            </tr>
+            </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
